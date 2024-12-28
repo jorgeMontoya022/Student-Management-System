@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.AdminContainerViewController">
+  <children>
+    <TabPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+             AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+             tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="Gestión de estudiantes">
+          <content>
+            <AnchorPane>
+              <children>
+                <fx:include source="gestion-estudiante-view.fxml" AnchorPane.bottomAnchor="0.0"
+                            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                            AnchorPane.topAnchor="0.0"/>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Gestion de cursos">
+          <content>
+            <AnchorPane>
+              <children>
+                <fx:include source="gestion-cursos-view.fxml" AnchorPane.bottomAnchor="0.0"
+                            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                            AnchorPane.topAnchor="0.0"/>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Asignación de cursos">
+          <content>
+            <AnchorPane />
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>

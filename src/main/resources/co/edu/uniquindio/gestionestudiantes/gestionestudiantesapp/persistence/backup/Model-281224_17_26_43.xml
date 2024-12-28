@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="21.0.2" class="java.beans.XMLDecoder">
+ <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Universidad" id="Universidad0">
+  <void property="admin">
+   <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Admin">
+    <void property="correo">
+     <string>jorgew.montoyat@uqvirtual.edu.co</string>
+    </void>
+    <void property="id">
+     <string>25024333</string>
+    </void>
+    <void property="nombre">
+     <string>admin</string>
+    </void>
+    <void property="telefono">
+     <string>3207748610</string>
+    </void>
+   </object>
+  </void>
+  <void property="listaCursos">
+   <void method="add">
+    <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Curso" id="Curso0">
+     <void property="codigo">
+      <string>CS101</string>
+     </void>
+     <void property="listaEstudiantes">
+      <void method="add">
+       <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Estudiante" id="Estudiante0">
+        <void property="correo">
+         <string>jorgetoro708@gmail.com</string>
+        </void>
+        <void property="id">
+         <string>1097032932</string>
+        </void>
+        <void property="listaCursos">
+         <void method="add">
+          <object idref="Curso0"/>
+         </void>
+         <void method="add">
+          <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Curso" id="Curso1">
+           <void property="codigo">
+            <string>CS103</string>
+           </void>
+           <void property="listaEstudiantes">
+            <void method="add">
+             <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Estudiante" id="Estudiante1">
+              <void property="correo">
+               <string>marianalopez98@gmail.com</string>
+              </void>
+              <void property="id">
+               <string>1095023489</string>
+              </void>
+              <void property="listaCursos">
+               <void method="add">
+                <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Curso" id="Curso2">
+                 <void property="codigo">
+                  <string>CS102</string>
+                 </void>
+                 <void property="listaEstudiantes">
+                  <void method="add">
+                   <object idref="Estudiante1"/>
+                  </void>
+                  <void method="add">
+                   <object idref="Estudiante0"/>
+                  </void>
+                  <void method="add">
+                   <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Estudiante" id="Estudiante2">
+                    <void property="correo">
+                     <string>carlosvalencia77@gmail.com</string>
+                    </void>
+                    <void property="id">
+                     <string>1098056781</string>
+                    </void>
+                    <void property="listaCursos">
+                     <void method="add">
+                      <object idref="Curso0"/>
+                     </void>
+                     <void method="add">
+                      <object idref="Curso2"/>
+                     </void>
+                     <void method="add">
+                      <object idref="Curso1"/>
+                     </void>
+                    </void>
+                    <void property="nombre">
+                     <string>Carlos Andrés Valencia</string>
+                    </void>
+                    <void property="telefono">
+                     <string>3005678912</string>
+                    </void>
+                   </object>
+                  </void>
+                 </void>
+                 <void property="nombre">
+                  <string>Estructuras de Datos</string>
+                 </void>
+                 <void property="nombreProfesor">
+                  <string>María González</string>
+                 </void>
+                </object>
+               </void>
+               <void method="add">
+                <object idref="Curso1"/>
+               </void>
+              </void>
+              <void property="nombre">
+               <string>Mariana López Cardona Celemín</string>
+              </void>
+              <void property="telefono">
+               <string>3127896543</string>
+              </void>
+             </object>
+            </void>
+            <void method="add">
+             <object idref="Estudiante2"/>
+            </void>
+            <void method="add">
+             <object idref="Estudiante0"/>
+            </void>
+           </void>
+           <void property="nombre">
+            <string>Bases de Datos</string>
+           </void>
+           <void property="nombreProfesor">
+            <string>Luis Ramírez</string>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object idref="Curso2"/>
+         </void>
+        </void>
+        <void property="nombre">
+         <string>Jorge William Montoya Toro</string>
+        </void>
+        <void property="telefono">
+         <string>3244544139</string>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object idref="Estudiante2"/>
+      </void>
+     </void>
+     <void property="nombre">
+      <string>Programación Orientada a Objetos</string>
+     </void>
+     <void property="nombreProfesor">
+      <string>Juan Pérez</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object idref="Curso2"/>
+   </void>
+   <void method="add">
+    <object idref="Curso1"/>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Curso">
+     <void property="codigo">
+      <string>CS104</string>
+     </void>
+     <void property="nombre">
+      <string>Ingeniería de Software</string>
+     </void>
+     <void property="nombreProfesor">
+      <string>Ana Mejía</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Curso">
+     <void property="codigo">
+      <string>CS105</string>
+     </void>
+     <void property="nombre">
+      <string>Redes de Computadores</string>
+     </void>
+     <void property="nombreProfesor">
+      <string>Carlos Valencia</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="listaEstudiantes">
+   <void method="add">
+    <object idref="Estudiante0"/>
+   </void>
+   <void method="add">
+    <object idref="Estudiante1"/>
+   </void>
+   <void method="add">
+    <object idref="Estudiante2"/>
+   </void>
+  </void>
+ </object>
+</java>

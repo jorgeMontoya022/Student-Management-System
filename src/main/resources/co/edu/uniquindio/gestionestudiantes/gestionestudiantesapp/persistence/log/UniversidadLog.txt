@@ -1,0 +1,2 @@
+dic 28, 2024 5:26:43 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2024-12-28
