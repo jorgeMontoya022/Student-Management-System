@@ -108,4 +108,13 @@ public class Universidad implements Serializable {
         }
         return null;
     }
+
+    public List<Estudiante> getEstudiantesCurso(Curso curso) {
+        if (curso.getListaEstudiantes() == null) {
+            return new ArrayList<>();
+        } else {
+            System.out.println("Estudiantes del curso: " + curso.getListaEstudiantes().size());
+            return curso.getListaEstudiantes();
+        }
+    }
 }

@@ -125,5 +125,11 @@
                 <DropShadow color="#00000033" />
             </effect>
         </Button>
+
+        <Button fx:id="btnVerEstudiantes" onAction="#onVerEstudiantes" style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-background-radius: 5;" text="Ver Estudiantes" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0">
+                <effect>
+                    <DropShadow color="#00000033" />
+                </effect>
+        </Button>
     </children>
 </AnchorPane>

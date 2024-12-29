@@ -21,7 +21,6 @@ public class ModelFactory {
 
 
 
-
     private static class SinglentonHolder {
         private static final ModelFactory eINSTANCE = new ModelFactory();
     }
@@ -131,6 +130,16 @@ public class ModelFactory {
         return estudianteActualizado;
     }
 
+    public List<CursoDto> getCursos() {
+        List<Curso> cursos = universidad.getListaCursos();
+        return cursos != null ? gestionEstudiantesMapper.getListaCursosDto(cursos) : new ArrayList<>();
+    }
+
+    public List<EstudianteDto> getEstudiantesCurso(CursoDto cursoSeleccionado) {
+        Curso curso = gestionEstudiantesMapper.cursoDtoToCurso(cursoSeleccionado);
+        List<EstudianteDto>listaEstudiantes = gestionEstudiantesMapper.getListaEstudiantesDto(universidad.getEstudiantesCurso(curso));
+        return listaEstudiantes;
+    }
 
 
 

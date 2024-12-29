@@ -11,9 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-import java.util.List;
-
-public class CursoEstudianteViewController {
+public class CursosEstudianteViewController {
 
     @FXML
     private Label labelNombre;

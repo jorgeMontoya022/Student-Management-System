@@ -21,7 +21,7 @@ public interface IGestionEstudiantesMapper {
     @Mapping(source = "id", target = "id")
     @Mapping(source = "correo", target = "correo")
     @Mapping(source = "telefono", target = "telefono")
-    @Mapping(source = "listaCursos", target = "listaCursos", qualifiedByName = "cursoToCursoDto")
+    @Mapping(source = "listaCursos", target = "listaCursos", qualifiedByName = "cursoToSimpleCursoDto")
     EstudianteDto estudianteToEstudianteDto(Estudiante estudiante);
 
     @Named("estudianteDtoToEstudiante")
@@ -29,22 +29,53 @@ public interface IGestionEstudiantesMapper {
     @Mapping(source = "id", target = "id")
     @Mapping(source = "correo", target = "correo")
     @Mapping(source = "telefono", target = "telefono")
-    @Mapping(source = "listaCursos", target = "listaCursos", qualifiedByName = "cursoDtoToCurso")
+    @Mapping(source = "listaCursos", target = "listaCursos", qualifiedByName = "cursoDtoToSimpleCurso")
     Estudiante estudianteDtoToEstudiante(EstudianteDto estudianteDto);
 
     @Named("cursoToCursoDto")
     @Mapping(source = "nombre", target = "nombre")
     @Mapping(source = "codigo", target = "codigo")
     @Mapping(source = "nombreProfesor", target = "nombreProfesor")
-    @Mapping(target = "listaEstudiantes", ignore = true) // Ignorar la lista de estudiantes en el DTO de Curso
+    @Mapping(source = "listaEstudiantes", target = "listaEstudiantes", qualifiedByName = "estudianteToSimpleEstudianteDto")
     CursoDto cursoToCursoDto(Curso curso);
 
     @Named("cursoDtoToCurso")
     @Mapping(source = "nombre", target = "nombre")
     @Mapping(source = "codigo", target = "codigo")
     @Mapping(source = "nombreProfesor", target = "nombreProfesor")
-    @Mapping(target = "listaEstudiantes", ignore = true) // Ignorar la lista de estudiantes en la conversión de Curso a DTO
+    @Mapping(source = "listaEstudiantes", target = "listaEstudiantes", qualifiedByName = "estudianteDtoToSimpleEstudiante")
     Curso cursoDtoToCurso(CursoDto cursoDto);
+
+    // Mapeos simplificados para romper la recursión
+    @Named("cursoToSimpleCursoDto")
+    @Mapping(source = "nombre", target = "nombre")
+    @Mapping(source = "codigo", target = "codigo")
+    @Mapping(source = "nombreProfesor", target = "nombreProfesor")
+    @Mapping(target = "listaEstudiantes", ignore = true)
+    CursoDto cursoToSimpleCursoDto(Curso curso);
+
+    @Named("cursoDtoToSimpleCurso")
+    @Mapping(source = "nombre", target = "nombre")
+    @Mapping(source = "codigo", target = "codigo")
+    @Mapping(source = "nombreProfesor", target = "nombreProfesor")
+    @Mapping(target = "listaEstudiantes", ignore = true)
+    Curso cursoDtoToSimpleCurso(CursoDto cursoDto);
+
+    @Named("estudianteToSimpleEstudianteDto")
+    @Mapping(source = "nombre", target = "nombre")
+    @Mapping(source = "id", target = "id")
+    @Mapping(source = "correo", target = "correo")
+    @Mapping(source = "telefono", target = "telefono")
+    @Mapping(target = "listaCursos", ignore = true)
+    EstudianteDto estudianteToSimpleEstudianteDto(Estudiante estudiante);
+
+    @Named("estudianteDtoToSimpleEstudiante")
+    @Mapping(source = "nombre", target = "nombre")
+    @Mapping(source = "id", target = "id")
+    @Mapping(source = "correo", target = "correo")
+    @Mapping(source = "telefono", target = "telefono")
+    @Mapping(target = "listaCursos", ignore = true)
+    Estudiante estudianteDtoToSimpleEstudiante(EstudianteDto estudianteDto);
 
     @IterableMapping(qualifiedByName = "estudianteToEstudianteDto")
     List<EstudianteDto> getListaEstudiantesDto(List<Estudiante> listaEstudiantes);

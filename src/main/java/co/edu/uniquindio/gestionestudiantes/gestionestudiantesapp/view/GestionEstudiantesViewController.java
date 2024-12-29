@@ -185,7 +185,7 @@ public class GestionEstudiantesViewController extends CoreViewController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/gestionestudiantes/gestionestudiantesapp/CursosEstudianteView.fxml"));
             AnchorPane root = loader.load();
-            CursoEstudianteViewController controller = loader.getController();
+            CursosEstudianteViewController controller = loader.getController();
             controller.setEstudiante(estudianteSeleccionado);
             Stage cursosStage = new Stage();
             cursosStage.setTitle("Cursos del estudiante " + estudianteSeleccionado.nombre());
