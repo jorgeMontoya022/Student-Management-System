@@ -65,8 +65,9 @@ public class EstudiantesCursoViewController {
     }
 
     private void cargarEstudiantesCurso(CursoDto cursoSeleccionado) {
-        listaEstudiantesDto.clear();  
+        listaEstudiantesDto.clear();
         listaEstudiantesDto.addAll(gestionCursosController.getEstudiantesCurso(cursoSeleccionado));
+        tableEstudiantes.refresh();
         tableEstudiantes.getItems().clear();
         tableEstudiantes.setItems(listaEstudiantesDto);
     }

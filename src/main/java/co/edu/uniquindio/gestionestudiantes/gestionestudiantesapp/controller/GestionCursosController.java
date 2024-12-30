@@ -17,4 +17,8 @@ public class GestionCursosController extends CoreController {
     public List<EstudianteDto> getEstudiantesCurso(CursoDto cursoSeleccionado) {
         return modelFactory.getEstudiantesCurso(cursoSeleccionado);
     }
+
+    public boolean agregarCursos(CursoDto cursoDto) {
+        return modelFactory.agregarCursos(cursoDto);
+    }
 }

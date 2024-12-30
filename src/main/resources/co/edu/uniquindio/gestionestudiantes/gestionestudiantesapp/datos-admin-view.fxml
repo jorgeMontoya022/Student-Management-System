@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.DatosAdminViewController">
+    <children>
+        <!-- Background Design Elements -->
+        <Circle centerX="200" centerY="-100" fill="#469fff" opacity="0.1" radius="300" />
+        <Circle centerX="700" centerY="500" fill="#d1e9ff" opacity="0.2" radius="200" />
+
+        <!-- Decorative Elements -->
+        <Circle centerX="50" centerY="250" fill="#469fff" opacity="0.3" radius="5" />
+        <Circle centerX="750" centerY="150" fill="#469fff" opacity="0.3" radius="8" />
+        <Circle centerX="150" centerY="450" fill="#d1e9ff" opacity="0.4" radius="6" />
+        <Circle centerX="650" centerY="350" fill="#d1e9ff" opacity="0.4" radius="7" />
+
+        <!-- Main Content Container -->
+        <VBox spacing="30" AnchorPane.bottomAnchor="40" AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50" AnchorPane.topAnchor="40">
+
+            <!-- Welcome Header -->
+            <VBox alignment="CENTER" spacing="15">
+                <Label style="-fx-text-fill: #469fff;" text="Panel de Administrador">
+                    <font>
+                        <Font name="System Bold" size="42.0" />
+                    </font>
+                </Label>
+                <Rectangle fill="#469fff" height="4" opacity="0.5" width="100" />
+            </VBox>
+
+            <!-- Main Content -->
+            <VBox alignment="CENTER" spacing="40">
+                <!-- Admin Info Header -->
+                <Label style="-fx-text-fill: #2c3e50;" text="Información del Administrador">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+
+                <!-- Admin Data Cards -->
+                <HBox alignment="CENTER" spacing="30">
+                    <!-- Name Card -->
+                    <VBox alignment="CENTER" spacing="5" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 15;">
+                        <effect>
+                            <DropShadow color="#00000022" radius="10" spread="0.05" />
+                        </effect>
+                        <Label style="-fx-text-fill: #469fff;" text="NOMBRE">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lblNombre" style="-fx-text-fill: #2c3e50;" text="Admin">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </VBox>
+
+                    <!-- ID Card -->
+                    <VBox alignment="CENTER" spacing="5" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 15;">
+                        <effect>
+                            <DropShadow color="#00000022" radius="10" spread="0.05" />
+                        </effect>
+                        <Label style="-fx-text-fill: #469fff;" text="CÓDIGO DE ADMIN">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lblId" style="-fx-text-fill: #2c3e50;" text="ADM001">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </VBox>
+
+                    <!-- Email Card -->
+                    <VBox alignment="CENTER" spacing="5" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 15;">
+                        <effect>
+                            <DropShadow color="#00000022" radius="10" spread="0.05" />
+                        </effect>
+                        <Label style="-fx-text-fill: #469fff;" text="CORREO ELECTRÓNICO">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lblCorreo" style="-fx-text-fill: #2c3e50;" text="admin@universidad.edu.co">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </VBox>
+
+                    <!-- Role Card -->
+                    <VBox alignment="CENTER" spacing="5" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 15;">
+                        <effect>
+                            <DropShadow color="#00000022" radius="10" spread="0.05" />
+                        </effect>
+                        <Label style="-fx-text-fill: #469fff;" text="ROL">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label style="-fx-text-fill: #2c3e50;" text="Administrador Principal">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </VBox>
+                </HBox>
+
+                <!-- Action Buttons -->
+                <HBox alignment="CENTER" spacing="20">
+                    <!-- Logout Button -->
+                    <Button onAction="#onLogoutClick" style="-fx-background-color: #ff4646; -fx-text-fill: white; -fx-background-radius: 25; -fx-padding: 15 50; -fx-cursor: hand;" text="CERRAR SESIÓN">
+                        <font>
+                            <Font name="System Bold" size="14.0" />
+                        </font>
+                        <effect>
+                            <DropShadow color="#ff464666" radius="15" spread="0.1" />
+                        </effect>
+                    </Button>
+                    <!-- Dashboard Button -->
+                    <Button onAction="#onDashboardClick" style="-fx-background-color: #469fff; -fx-text-fill: white; -fx-background-radius: 25; -fx-padding: 15 50; -fx-cursor: hand;" text="IR AL DASHBOARD">
+                        <font>
+                            <Font name="System Bold" size="14.0" />
+                        </font>
+                        <effect>
+                            <DropShadow color="#469fff66" radius="15" spread="0.1" />
+                        </effect>
+                    </Button>
+                </HBox>
+            </VBox>
+        </VBox>
+
+        <!-- Bottom Decorative Elements -->
+        <Rectangle fill="#469fff" height="3" opacity="0.1" width="200" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" />
+        <Rectangle fill="#469fff" height="3" opacity="0.1" width="200" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="20" />
+    </children>
+</AnchorPane>

@@ -18,10 +18,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -84,8 +81,10 @@ public class GestionCursosViewController extends CoreViewController {
 
     @FXML
     void onAgregar(ActionEvent event) {
+        agregarCurso();
 
     }
+
 
     @FXML
     void onEliminar(ActionEvent event) {
@@ -94,8 +93,11 @@ public class GestionCursosViewController extends CoreViewController {
 
     @FXML
     void onLimpiar(ActionEvent event) {
+        clearFields();
+        deselectTable();
 
     }
+
 
     @FXML
     void onVerEstudiantes(ActionEvent event) {
@@ -103,7 +105,6 @@ public class GestionCursosViewController extends CoreViewController {
             openStudentsWindow(cursoSeleccionado);
         }
     }
-
 
 
     @FXML
@@ -159,7 +160,7 @@ public class GestionCursosViewController extends CoreViewController {
     }
 
     private void listenerSelection() {
-        tableCursos.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) ->{
+        tableCursos.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             cursoSeleccionado = newSelection;
             if (cursoSeleccionado != null) {
                 showInformation(cursoSeleccionado);
@@ -195,5 +196,59 @@ public class GestionCursosViewController extends CoreViewController {
         }
     }
 
+    private void clearFields() {
+        txtProfesor.clear();
+        txtCodigo.clear();
+        txtNombreCurso.clear();
+        txtFiltrar.clear();
+    }
 
+    private void deselectTable() {
+        tableCursos.getSelectionModel().clearSelection();
+        cursoSeleccionado = null;
+    }
+
+    private void agregarCurso() {
+        CursoDto cursoDto = buildCursoDto();
+        if (cursoDto == null) {
+            mostrarMensaje("Error", "Datos no validos", "El tipo seleccionado no es valido", Alert.AlertType.ERROR);
+            return;
+        }
+        if (validarDatos(cursoDto)) {
+            if (gestionCursosController.agregarCursos(cursoDto)) {
+                listaCursosDto.add(cursoDto);
+                mostrarMensaje("Notificación", "Curso agregado exitosamente", "El curso ha sido registrado correctamente en el sistema. Ahora puede proceder a asignar estudiantes, configurar horarios o realizar cualquier gestión adicional relacionada con este curso.", Alert.AlertType.INFORMATION);
+                clearFields();
+            }
+        } else {
+            mostrarMensaje("Error", "No se pudo agregar el curso", "Ocurrió un problema al intentar registrar el curso en el sistema. Por favor, revise los datos ingresados y vuelva a intentarlo.", Alert.AlertType.ERROR);
+        }
+    }
+
+    private boolean validarDatos(CursoDto cursoDto) {
+        String mensaje = "";
+        if (cursoDto.nombre().isEmpty()) {
+            mensaje += "El nombre del curso es requerido.\n";
+        }
+        if (cursoDto.codigo().isEmpty()) {
+            mensaje += "El código del curso es requerido.\n";
+        }
+        if (cursoDto.nombreProfesor().isEmpty()) {
+            mensaje += "El nombre del profesor es requerido.\n";
+        }
+        if (!mensaje.isEmpty()) {
+            mostrarMensaje("Notificación de validación", "Datos no validos", mensaje, Alert.AlertType.WARNING);
+            return false;
+        }
+        return true;
+
+    }
+
+    private CursoDto buildCursoDto() {
+        String nombre = txtNombreCurso.getText().trim();
+        String codigo = txtCodigo.getText().trim();
+        String nombreProfesor = txtProfesor.getText().trim();
+        return new CursoDto(nombre, codigo, nombreProfesor, new ArrayList<>());
+
+    }
 }

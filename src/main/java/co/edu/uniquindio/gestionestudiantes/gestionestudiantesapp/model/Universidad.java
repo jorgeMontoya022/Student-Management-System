@@ -1,5 +1,6 @@
 package co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model;
 
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.exceptions.CursoException;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.exceptions.EstudianteException;
 
 import java.io.Serializable;
@@ -116,5 +117,40 @@ public class Universidad implements Serializable {
             System.out.println("Estudiantes del curso: " + curso.getListaEstudiantes().size());
             return curso.getListaEstudiantes();
         }
+    }
+
+    public boolean verificarCursoExiste(String codigo) {
+        for (Curso curso: listaCursos) {
+            if (curso.getCodigo().equals(codigo)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void addCurso(Curso curso) throws CursoException {
+        if (curso == null) {
+            throw new CursoException("El curso no puede ser nulo");
+
+        }
+        listaCursos.add(curso);
+    }
+
+    public Persona validarAcceso(String correo, String id) throws Exception {
+        if(admin != null && admin.getCorreo().equals(correo) &&
+        admin.getId().equals(id)){
+            return admin;
+        }
+        for (Estudiante estudiante : listaEstudiantes) {
+            if (verificarEstudianteExiste(id)) {
+                if(estudiante.getCorreo().equals(correo) && estudiante.getId().equals(id)) {
+                    return estudiante;
+
+                }
+            } else {
+                throw new Exception("El usuario no existe");
+            }
+        }
+        throw new Exception("Identificación o documento de identidad incorrecto");
     }
 }

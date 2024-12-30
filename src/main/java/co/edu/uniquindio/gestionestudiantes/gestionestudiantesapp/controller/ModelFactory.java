@@ -6,6 +6,7 @@ import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.exceptions.Est
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.mapping.IGestionEstudiantesMapper;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Curso;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Estudiante;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Persona;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Universidad;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.BackupUtil;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.PersistenceUtil;
@@ -18,7 +19,6 @@ public class ModelFactory {
 
     Universidad universidad;
     IGestionEstudiantesMapper gestionEstudiantesMapper = IGestionEstudiantesMapper.INSTANCE;
-
 
 
     private static class SinglentonHolder {
@@ -139,6 +139,27 @@ public class ModelFactory {
         Curso curso = gestionEstudiantesMapper.cursoDtoToCurso(cursoSeleccionado);
         List<EstudianteDto>listaEstudiantes = gestionEstudiantesMapper.getListaEstudiantesDto(universidad.getEstudiantesCurso(curso));
         return listaEstudiantes;
+    }
+
+    public boolean agregarCursos(CursoDto cursoDto) {
+        try {
+            if (universidad.verificarCursoExiste(cursoDto.codigo())) {
+                return false;
+            }
+            Curso curso = gestionEstudiantesMapper.cursoDtoToCurso(cursoDto);
+            universidad.addCurso(curso);
+            registerSystemActions("Curso agregado: "+ cursoDto.codigo(), 1, "AgregarCurso");
+            saveXMLResource();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            registerSystemActions(e.getMessage(), 3, "AgregarCurso");
+            return false;
+        }
+    }
+
+    public Persona validarAcceso(String correo, String id) throws Exception {
+        return universidad.validarAcceso(correo, id);
     }
 
 
