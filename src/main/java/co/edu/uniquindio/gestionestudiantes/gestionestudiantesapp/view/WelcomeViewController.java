@@ -20,12 +20,13 @@ public class WelcomeViewController extends CoreViewController {
 
     @FXML
     void onLoginClick(ActionEvent event) {
+        mostrarMensaje("Aplicación en Desarrollo", "¡Aviso Importante!", "Esta aplicación se encuentra en fase de desarrollo. Algunas funcionalidades pueden no estar disponibles o presentar comportamientos inesperados. Estamos trabajando para mejorar su experiencia. Gracias por su comprensión.",
+                AlertType.WARNING);
         browseWindow("/co/edu/uniquindio/gestionestudiantes/gestionestudiantesapp/login-view.fxml", "Inicio de Sesión", event);
     }
 
     @FXML
     void initialize() {
-        mostrarMensaje("Aplicación en Desarrollo", "¡Aviso Importante!", "Esta aplicación se encuentra en fase de desarrollo. Algunas funcionalidades pueden no estar disponibles o presentar comportamientos inesperados. Estamos trabajando para mejorar su experiencia. Gracias por su comprensión.",
-                AlertType.WARNING);
+
     }
 }
