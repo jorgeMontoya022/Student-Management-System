@@ -47,6 +47,12 @@ public class LoginViewController extends CoreViewController {
     }
 
     @FXML
+    void onVolverClick(ActionEvent event) {
+        browseWindow("/co/edu/uniquindio/gestionestudiantes/gestionestudiantesapp/WelcomeView.fxml", "Institución educativa", event);
+
+    }
+
+    @FXML
     void initialize() {
         loginController = new LoginController();
 

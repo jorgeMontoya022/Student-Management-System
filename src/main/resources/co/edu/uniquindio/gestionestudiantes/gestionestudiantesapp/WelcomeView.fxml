@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.WelcomeViewController">
+    <children>
+        <!-- Elementos decorativos de fondo -->
+        <Circle centerX="250" centerY="-150" fill="#469fff" opacity="0.1" radius="400" />
+        <Circle centerX="850" centerY="600" fill="#469fff" opacity="0.1" radius="300" />
+
+        <!-- Contenedor Principal -->
+        <StackPane alignment="CENTER" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+            <Rectangle arcHeight="50" arcWidth="50" fill="#469fff" height="500" width="920">
+                <effect>
+                    <DropShadow color="#00000033" radius="20" spread="0.1" />
+                </effect>
+            </Rectangle>
+
+            <!-- Diseño del Contenido -->
+            <VBox alignment="CENTER" maxWidth="700" spacing="40">
+                <padding>
+                    <Insets bottom="50" left="50" right="50" top="50" />
+                </padding>
+
+                <!-- Título y Subtítulo -->
+                <VBox alignment="CENTER" spacing="20">
+                    <Label style="-fx-text-fill: white;" text="EDUCACIÓN">
+                        <font>
+                            <Font name="System Bold" size="48.0" />
+                        </font>
+                    </Label>
+                    <Label style="-fx-text-fill: white; -fx-opacity: 0.9" text="El camino hacia el éxito">
+                        <font>
+                            <Font size="24.0" />
+                        </font>
+                    </Label>
+                    <Rectangle fill="white" height="4" opacity="0.7" width="80" />
+                </VBox>
+
+                <!-- Mensaje Inspirador -->
+                <VBox alignment="CENTER" spacing="20">
+                    <Label style="-fx-text-fill: white; -fx-text-alignment: center;" text="El aprendizaje es el principio de la sabiduría" textAlignment="CENTER" wrapText="true">
+                        <font>
+                            <Font name="System Bold" size="32.0" />
+                        </font>
+                    </Label>
+                    <Label style="-fx-text-fill: white; -fx-opacity: 0.9; -fx-text-alignment: center;" text="Cada día es una nueva oportunidad para aprender, crecer y alcanzar tu máximo potencial." textAlignment="CENTER" wrapText="true">
+                        <font>
+                            <Font size="16.0" />
+                        </font>
+                    </Label>
+                </VBox>
+
+                <!-- Botón de Inicio de Sesión -->
+                <Button fx:id="btnLogin" onAction="#onLoginClick" style="-fx-background-color: white; -fx-text-fill: #469fff;
+                                                                        -fx-background-radius: 30; -fx-padding: 15 60;
+                                                                        -fx-cursor: hand;" text="COMENZAR AHORA">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                    <effect>
+                        <DropShadow color="#00000033" radius="15" spread="0.1" />
+                    </effect>
+                </Button>
+            </VBox>
+        </StackPane>
+    </children>
+</AnchorPane>
