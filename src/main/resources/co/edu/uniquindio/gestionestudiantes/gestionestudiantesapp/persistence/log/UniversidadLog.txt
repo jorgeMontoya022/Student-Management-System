@@ -76,3 +76,9 @@ dic 31, 2024 9:23:55 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudia
 INFO: login,Login,2024-12-31
 dic 31, 2024 9:28:15 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
 INFO: login,Login,2024-12-31
+ene 01, 2025 2:13:59 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-01
+ene 03, 2025 1:31:14 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-03
+ene 03, 2025 1:35:46 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-03

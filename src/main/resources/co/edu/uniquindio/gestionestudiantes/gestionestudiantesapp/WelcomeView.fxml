@@ -48,7 +48,7 @@
 
                 <!-- Mensaje Inspirador -->
                 <VBox alignment="CENTER" spacing="20">
-                    <Label style="-fx-text-fill: white; -fx-text-alignment: center;" text="El aprendizaje es el principio de la sabiduría" textAlignment="CENTER" wrapText="true">
+                    <Label style="-fx-text-fill: white; -fx-text-alignment: center;" text="El conocimiento que adquieres hoy puede cambiar tu camino mañana" textAlignment="CENTER" wrapText="true">
                         <font>
                             <Font name="System Bold" size="32.0" />
                         </font>
