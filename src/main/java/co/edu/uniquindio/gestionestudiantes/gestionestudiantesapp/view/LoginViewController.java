@@ -73,7 +73,7 @@ public class LoginViewController extends CoreViewController {
                 if (usuarioValidado instanceof Estudiante) {
                     browseWindow("/co/edu/uniquindio/gestionestudiantes/gestionestudiantesapp/datos-estudiante-view.fxml", "Datos del estudiante", event);
                 }else{
-                    mostrarMensaje("Error", "Error al incio de sesión", "Actualmente estamos trabajando en la optimización del manejo de datos del administrador. Este proceso podría ocasionar dificultades temporales al intentar iniciar sesión. Agradecemos su comprensión mientras implementamos estas mejoras para garantizar una experiencia más eficiente y segura.", Alert.AlertType.ERROR);
+                    browseWindow("/co/edu/uniquindio/gestionestudiantes/gestionestudiantesapp/datos-admin-view.fxml","Datos del administrador",event);
                 }
             }
         } catch (Exception e) {

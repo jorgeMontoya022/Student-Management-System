@@ -1,0 +1,41 @@
+.tab-pane {
+    -fx-tab-min-width: 160px;
+    -fx-background-color: transparent;
+}
+
+.tab-pane .tab-header-area {
+    -fx-padding: 0 0 0 0;
+}
+
+.tab-pane .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.tab {
+    -fx-background-color: transparent;
+    -fx-padding: 0 20;
+}
+
+.tab:selected {
+    -fx-background-color: #469fff;
+    -fx-background-radius: 8;
+}
+
+.tab .tab-label {
+    -fx-text-fill: #666666;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: white;
+}
+
+.tab-content-area {
+    -fx-background-color: transparent;
+}
+
+/* Eliminar el borde por defecto de los tabs */
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-color: transparent;
+}

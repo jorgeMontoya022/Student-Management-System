@@ -1,44 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.paint.Color?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.AdminContainerViewController">
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.AdminContainerViewController"
+            style="-fx-background-color: #f8f9fa;">
   <children>
-    <TabPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-             AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
-             tabClosingPolicy="UNAVAILABLE">
-      <tabs>
-        <Tab text="Gestión de estudiantes">
-          <content>
-            <AnchorPane>
-              <children>
-                <fx:include source="gestion-estudiante-view.fxml" AnchorPane.bottomAnchor="0.0"
-                            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                            AnchorPane.topAnchor="0.0"/>
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab text="Gestion de cursos">
-          <content>
-            <AnchorPane>
-              <children>
-                <fx:include source="gestion-cursos-view.fxml" AnchorPane.bottomAnchor="0.0"
-                            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                            AnchorPane.topAnchor="0.0"/>
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab text="Asignación de cursos">
-          <content>
-            <AnchorPane />
-          </content>
-        </Tab>
-      </tabs>
-    </TabPane>
+    <!-- Panel de Navegación Lateral -->
+    <VBox style="-fx-background-color: #1a237e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" prefWidth="250.0">
+      <padding>
+        <Insets top="30.0" bottom="30.0"/>
+      </padding>
+
+      <!-- Título de la App -->
+      <Label style="-fx-text-fill: white;" text="Gestión Estudiantil" alignment="CENTER" prefWidth="250.0">
+        <font>
+          <Font name="System Bold" size="22.0"/>
+        </font>
+        <VBox.margin>
+          <Insets bottom="40.0"/>
+        </VBox.margin>
+      </Label>
+
+      <!-- Botones de Navegación -->
+      <Button fx:id="btnEstudiantes" onAction="#onNavigateToEstudiantes"
+              style="-fx-background-color: #303f9f; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 15 20;"
+              text="Gestión de Estudiantes"
+              prefWidth="250.0">
+        <font>
+          <Font size="14.0"/>
+        </font>
+        <VBox.margin>
+          <Insets bottom="5.0"/>
+        </VBox.margin>
+      </Button>
+
+      <Button fx:id="btnCursos" onAction="#onNavigateToCursos"
+              style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 15 20;"
+              text="Gestión de Cursos"
+              prefWidth="250.0">
+        <font>
+          <Font size="14.0"/>
+        </font>
+        <VBox.margin>
+          <Insets bottom="5.0"/>
+        </VBox.margin>
+      </Button>
+
+      <Button fx:id="btnAsignacion" onAction="#onNavigateToAsignacion"
+              style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 15 20;"
+              text="Asignación de Cursos"
+              prefWidth="250.0">
+        <font>
+          <Font size="14.0"/>
+        </font>
+      </Button>
+    </VBox>
+
+    <!-- Área de Contenido Principal -->
+    <StackPane AnchorPane.bottomAnchor="0.0"
+               AnchorPane.leftAnchor="250.0"
+               AnchorPane.rightAnchor="0.0"
+               AnchorPane.topAnchor="0.0">
+      <children>
+        <!-- Contenedores para cada vista -->
+        <AnchorPane fx:id="estudiantesView" visible="true">
+          <children>
+            <fx:include source="gestion-estudiante-view.fxml"
+                        AnchorPane.bottomAnchor="0.0"
+                        AnchorPane.leftAnchor="0.0"
+                        AnchorPane.rightAnchor="0.0"
+                        AnchorPane.topAnchor="0.0"/>
+          </children>
+        </AnchorPane>
+
+        <AnchorPane fx:id="cursosView" visible="false">
+          <children>
+            <fx:include source="gestion-cursos-view.fxml"
+                        AnchorPane.bottomAnchor="0.0"
+                        AnchorPane.leftAnchor="0.0"
+                        AnchorPane.rightAnchor="0.0"
+                        AnchorPane.topAnchor="0.0"/>
+          </children>
+        </AnchorPane>
+
+        <AnchorPane fx:id="asignacionView" visible="false">
+          <children>
+          </children>
+        </AnchorPane>
+      </children>
+    </StackPane>
   </children>
 </AnchorPane>

@@ -193,6 +193,22 @@
    <void method="add">
     <object idref="Estudiante2"/>
    </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Estudiante">
+     <void property="correo">
+      <string>juanm@gmail.com</string>
+     </void>
+     <void property="id">
+      <string>10970403020</string>
+     </void>
+     <void property="nombre">
+      <string>Juan David Montoya Toro</string>
+     </void>
+     <void property="telefono">
+      <string>3218941022</string>
+     </void>
+    </object>
+   </void>
   </void>
  </object>
 </java>
