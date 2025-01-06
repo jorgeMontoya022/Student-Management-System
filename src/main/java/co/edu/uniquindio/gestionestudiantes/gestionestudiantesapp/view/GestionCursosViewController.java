@@ -8,7 +8,6 @@ import java.util.ResourceBundle;
 
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.controller.GestionCursosController;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.CursoDto;
-import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.EstudianteDto;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Admin;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.session.Sesion;
 import javafx.beans.property.SimpleStringProperty;
@@ -177,7 +176,7 @@ public class GestionCursosViewController extends CoreViewController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/gestionestudiantes/gestionestudiantesapp/estudiantesCursoView.fxml"));
             AnchorPane root = loader.load();
             EstudiantesCursoViewController controller = loader.getController();
-            controller.setEstudiante(cursoSeleccionado);
+            controller.setCurso(cursoSeleccionado);
             Stage cursosStage = new Stage();
             cursosStage.setTitle("Estudiantes de " + cursoSeleccionado.nombre());
             cursosStage.setScene(new Scene(root));

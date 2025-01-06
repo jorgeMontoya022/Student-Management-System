@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
-public class AdminContainerViewController {
+public class AdminContainerViewController extends CoreViewController {
 
     @FXML
     private ResourceBundle resources;
@@ -71,6 +71,12 @@ public class AdminContainerViewController {
 
 
     }
+
+    @FXML
+    void onNavigateToHome(ActionEvent event) {
+        browseWindow("/co/edu/uniquindio/gestionestudiantes/gestionestudiantesapp/datos-admin-view.fxml", "Datos del Administrador", event);
+    }
+
 
     @FXML
     void initialize() {

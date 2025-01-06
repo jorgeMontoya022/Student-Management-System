@@ -122,3 +122,49 @@ ene 04, 2025 11:46:59 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudi
 INFO: login,Login,2025-01-04
 ene 04, 2025 11:47:41 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
 INFO: login,Login,2025-01-04
+ene 05, 2025 9:03:33 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 05, 2025 9:26:45 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 05, 2025 9:39:13 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 05, 2025 9:42:30 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 05, 2025 9:50:43 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 05, 2025 9:59:37 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 05, 2025 10:22:09 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 05, 2025 10:31:09 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 05, 2025 10:34:49 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 05, 2025 10:35:42 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 05, 2025 10:44:26 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 05, 2025 10:50:39 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 05, 2025 11:13:50 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 05, 2025 11:15:55 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 05, 2025 11:18:57 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 05, 2025 11:31:16 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 05, 2025 11:51:13 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 05, 2025 11:55:35 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-05
+ene 06, 2025 12:37:06 A. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-06
+ene 06, 2025 12:42:06 A. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-06
+ene 06, 2025 12:44:49 A. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-06
+ene 06, 2025 12:50:18 A. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-06
+ene 06, 2025 1:09:18 A. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-06

@@ -1,92 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.paint.Color?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.AdminContainerViewController"
-            style="-fx-background-color: #f8f9fa;">
+<AnchorPane style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.AdminContainerViewController">
   <children>
     <!-- Panel de Navegación Lateral -->
-    <VBox style="-fx-background-color: #1a237e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" prefWidth="250.0">
+    <VBox prefWidth="250.0" style="-fx-background-color: #1a237e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
       <padding>
-        <Insets top="30.0" bottom="30.0"/>
+        <Insets bottom="30.0" top="30.0" />
       </padding>
 
       <!-- Título de la App -->
-      <Label style="-fx-text-fill: white;" text="Gestión Estudiantil" alignment="CENTER" prefWidth="250.0">
+      <Label alignment="CENTER" prefWidth="250.0" style="-fx-text-fill: white;" text="Gestión Estudiantil">
         <font>
-          <Font name="System Bold" size="22.0"/>
+          <Font name="System Bold" size="22.0" />
         </font>
         <VBox.margin>
-          <Insets bottom="40.0"/>
+          <Insets bottom="40.0" />
         </VBox.margin>
       </Label>
 
       <!-- Botones de Navegación -->
-      <Button fx:id="btnEstudiantes" onAction="#onNavigateToEstudiantes"
-              style="-fx-background-color: #303f9f; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 15 20;"
-              text="Gestión de Estudiantes"
-              prefWidth="250.0">
+      <Button fx:id="btnEstudiantes" onAction="#onNavigateToEstudiantes" prefWidth="250.0" style="-fx-background-color: #303f9f; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 15 20;" text="Gestión de Estudiantes">
         <font>
-          <Font size="14.0"/>
+          <Font size="14.0" />
         </font>
         <VBox.margin>
-          <Insets bottom="5.0"/>
+          <Insets bottom="5.0" />
         </VBox.margin>
       </Button>
 
-      <Button fx:id="btnCursos" onAction="#onNavigateToCursos"
-              style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 15 20;"
-              text="Gestión de Cursos"
-              prefWidth="250.0">
+      <Button fx:id="btnCursos" onAction="#onNavigateToCursos" prefWidth="250.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 15 20;" text="Gestión de Cursos">
         <font>
-          <Font size="14.0"/>
+          <Font size="14.0" />
         </font>
         <VBox.margin>
-          <Insets bottom="5.0"/>
+          <Insets bottom="5.0" />
         </VBox.margin>
       </Button>
 
-      <Button fx:id="btnAsignacion" onAction="#onNavigateToAsignacion"
-              style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 15 20;"
-              text="Asignación de Cursos"
-              prefWidth="250.0">
+      <Button fx:id="btnAsignacion" onAction="#onNavigateToAsignacion" prefWidth="250.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 15 20;" text="Asignación de Cursos">
         <font>
-          <Font size="14.0"/>
+          <Font size="14.0" />
         </font>
+      </Button>
+
+      <!-- Espaciador para empujar el botón de inicio hacia abajo -->
+      <Region VBox.vgrow="ALWAYS" />
+
+      <!-- Botón Volver al Inicio en la parte inferior -->
+      <Button fx:id="btnHome" onAction="#onNavigateToHome" prefWidth="250.0" style="-fx-background-color: #303f9f; -fx-text-fill: white; -fx-alignment: CENTER; -fx-padding: 15 20; -fx-background-radius: 25; -fx-border-color: white; -fx-border-radius: 25; -fx-border-width: 1;" text="Volver al Inicio">
+        <font>
+          <Font size="14.0" />
+        </font>
+        <VBox.margin>
+          <Insets left="25.0" right="25.0" />
+        </VBox.margin>
       </Button>
     </VBox>
 
     <!-- Área de Contenido Principal -->
-    <StackPane AnchorPane.bottomAnchor="0.0"
-               AnchorPane.leftAnchor="250.0"
-               AnchorPane.rightAnchor="0.0"
-               AnchorPane.topAnchor="0.0">
+    <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
         <!-- Contenedores para cada vista -->
         <AnchorPane fx:id="estudiantesView" visible="true">
           <children>
-            <fx:include source="gestion-estudiante-view.fxml"
-                        AnchorPane.bottomAnchor="0.0"
-                        AnchorPane.leftAnchor="0.0"
-                        AnchorPane.rightAnchor="0.0"
-                        AnchorPane.topAnchor="0.0"/>
+            <fx:include source="gestion-estudiante-view.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
           </children>
         </AnchorPane>
 
         <AnchorPane fx:id="cursosView" visible="false">
           <children>
-            <fx:include source="gestion-cursos-view.fxml"
-                        AnchorPane.bottomAnchor="0.0"
-                        AnchorPane.leftAnchor="0.0"
-                        AnchorPane.rightAnchor="0.0"
-                        AnchorPane.topAnchor="0.0"/>
+            <fx:include source="gestion-cursos-view.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
           </children>
         </AnchorPane>
 

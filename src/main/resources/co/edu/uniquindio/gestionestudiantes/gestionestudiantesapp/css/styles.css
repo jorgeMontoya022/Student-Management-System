@@ -1,41 +1,71 @@
-.tab-pane {
-    -fx-tab-min-width: 160px;
+.root {
+    -fx-font-family: 'SF Pro Text', 'Segoe UI', System;
+}
+
+.table-view {
     -fx-background-color: transparent;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
 }
 
-.tab-pane .tab-header-area {
-    -fx-padding: 0 0 0 0;
+.table-view .column-header {
+    -fx-background-color: #f8f9fa;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #dee2e6;
+    -fx-padding: 16px 8px;
 }
 
-.tab-pane .tab-header-background {
+.table-view .column-header-background {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 12 12 0 0;
+}
+
+.table-view .table-row-cell {
     -fx-background-color: transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #f0f0f0;
 }
 
-.tab {
-    -fx-background-color: transparent;
-    -fx-padding: 0 20;
+.table-view .table-row-cell:hover {
+    -fx-background-color: #469fff11;
 }
 
-.tab:selected {
-    -fx-background-color: #469fff;
+.table-view .table-row-cell:selected {
+    -fx-background-color: #469fff22;
+    -fx-text-fill: -fx-text-base-color;
+}
+
+.table-view .table-cell {
+    -fx-padding: 16px 8px;
+    -fx-text-fill: #2d3436;
+}
+
+.button:hover {
+    -fx-background-color: #469fff33;
+}
+
+.text-field {
+    -fx-background-color: #f8f9fa;
     -fx-background-radius: 8;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 8;
+    -fx-padding: 8;
 }
 
-.tab .tab-label {
-    -fx-text-fill: #666666;
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
+.text-field:focused {
+    -fx-border-color: #469fff;
+    -fx-background-color: white;
 }
 
-.tab:selected .tab-label {
-    -fx-text-fill: white;
+.combo-box {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 8;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 8;
 }
 
-.tab-content-area {
-    -fx-background-color: transparent;
-}
-
-/* Eliminar el borde por defecto de los tabs */
-.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
-    -fx-border-color: transparent;
+.combo-box:focused {
+    -fx-border-color: #469fff;
+    -fx-background-color: white;
 }

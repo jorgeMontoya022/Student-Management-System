@@ -84,12 +84,12 @@
                             <ColumnConstraints percentWidth="50" />
                             <ColumnConstraints percentWidth="50" />
                         </columnConstraints>
-                  <rowConstraints>
-                     <RowConstraints />
-                     <RowConstraints />
-                     <RowConstraints />
-                     <RowConstraints />
-                  </rowConstraints>
+                        <rowConstraints>
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                        </rowConstraints>
                     </GridPane>
 
                     <!-- Action Buttons -->
@@ -125,11 +125,16 @@
                     </TableView>
 
                     <!-- Table Actions -->
-                    <HBox alignment="CENTER_RIGHT" spacing="10">
+                    <HBox alignment="CENTER" spacing="10">
                         <padding>
                             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                         </padding>
-                  <Button fx:id="btnEliminar1" onAction="#onEliminar" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-background-radius: 5;" text="Eliminar" />
+                        <!-- Botón en la esquina izquierda -->
+                        <Button fx:id="btnVerCursos" onAction="#onVerCursos" style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-background-radius: 5;" text="Ver Cursos" visible="false" />
+                        <!-- Espaciador para empujar los botones hacia los extremos -->
+                        <HBox HBox.hgrow="ALWAYS" />
+                        <!-- Botón eliminar en la esquina derecha -->
+                        <Button fx:id="btnEliminar" onAction="#onEliminar" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-background-radius: 5;" text="Eliminar" />
                     </HBox>
                 </VBox>
             </VBox>
