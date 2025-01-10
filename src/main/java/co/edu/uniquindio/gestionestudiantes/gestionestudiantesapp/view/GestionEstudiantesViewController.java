@@ -5,10 +5,13 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.controller.GestionEstudianteController;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.EstudianteDto;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Admin;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.services.EmailServices;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.session.Sesion;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -22,6 +25,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class GestionEstudiantesViewController extends CoreViewController {
+
+    private final EmailServices emailService = new EmailServices();
 
     Admin loggedAdmin;
     ObservableList<EstudianteDto> listaEstudiantesDto = FXCollections.observableArrayList();
@@ -221,17 +226,31 @@ public class GestionEstudiantesViewController extends CoreViewController {
     private void agregarEstudiante() {
         EstudianteDto estudianteDto = buildEstudianteDto();
         if (estudianteDto == null) {
-            mostrarMensaje("Error", "Datos no validos", "El tipo de usuario seleccionado no es valido", Alert.AlertType.ERROR);
+            mostrarMensaje("Error", "Datos no válidos", "El tipo de usuario seleccionado no es válido", Alert.AlertType.ERROR);
             return;
         }
         if (validarDatos(estudianteDto)) {
             if (gestionEstudianteController.agregarEstudiante(estudianteDto)) {
                 listaEstudiantesDto.add(estudianteDto);
-                mostrarMensaje("Notificación", "Estudiante agregado", "El estudiante ha sido aagregado con éxito", Alert.AlertType.INFORMATION);
+                notificarEstudianteAgregado(estudianteDto);
+                mostrarMensaje("Notificación", "Estudiante agregado", "El registro del estudiante se ha completado exitosamente. Todos los datos han sido almacenados de forma segura en el sistema.", Alert.AlertType.INFORMATION);
                 clearFields();
             } else {
-                mostrarMensaje("Error", "Estudiante no agregado", "El Estudiante no pudo ser agregado", Alert.AlertType.ERROR);
+                mostrarMensaje("Error", "Estudiante no agregado", "El estudiante no pudo ser agregado", Alert.AlertType.ERROR);
             }
+        }
+    }
+
+    private void notificarEstudianteAgregado(EstudianteDto estudiante) {
+        try {
+            emailService.enviarCorreoBienvenida(estudiante);
+        } catch (Exception e) {
+            mostrarMensaje(
+                    "Advertencia",
+                    "Error en envío de correo",
+                    "El estudiante fue registrado pero no se pudo enviar el correo de bienvenida: " + e.getMessage(),
+                    Alert.AlertType.WARNING
+            );
         }
     }
 
@@ -241,16 +260,32 @@ public class GestionEstudiantesViewController extends CoreViewController {
             if (mostrarMensajeConfirmacion("¿Está seguro de eliminar a " + estudianteSeleccionado.nombre() + " ?")) {
                 estudianteEliminado = gestionEstudianteController.eliminarEstudiante(estudianteSeleccionado);
                 if (estudianteEliminado) {
-                    listaEstudiantesDto.remove(estudianteSeleccionado);
-                    mostrarMensaje("Notificación", "Estudiante eliminado", "El estudiante ha sido eliminado con éxito", Alert.AlertType.INFORMATION);
-                    deselectTable();
-                    clearFields();
+                    try {
+                        emailService.enviarCorreoEliminacion(estudianteSeleccionado);
+                        listaEstudiantesDto.remove(estudianteSeleccionado);
+                        mostrarMensaje("Notificación", "Estudiante eliminado",
+                                "El estudiante ha sido eliminado con éxito y se le ha notificado por correo",
+                                Alert.AlertType.INFORMATION);
+                    } catch (Exception e) {
+                        listaEstudiantesDto.remove(estudianteSeleccionado);
+                        mostrarMensaje("Advertencia", "Estudiante eliminado",
+                                "El estudiante ha sido eliminado con éxito pero no se pudo enviar el correo de notificación: "
+                                        + e.getMessage(),
+                                Alert.AlertType.WARNING);
+                    } finally {
+                        deselectTable();
+                        clearFields();
+                    }
                 } else {
-                    mostrarMensaje("Error", "Estudiante no eliminado", "El estudiante no pudo ser eliminado", Alert.AlertType.ERROR);
+                    mostrarMensaje("Error", "Estudiante no eliminado",
+                            "El estudiante no pudo ser eliminado",
+                            Alert.AlertType.ERROR);
                 }
             }
         } else {
-            mostrarMensaje("Error", "Estudiante no seleccionado", "Por favor seleccione un usuario para eliminar", Alert.AlertType.ERROR);
+            mostrarMensaje("Error", "Estudiante no seleccionado",
+                    "Por favor, seleccione un usuario de la lista para proceder con su eliminación. Es necesario elegir un registro válido para completar esta acción.",
+                    Alert.AlertType.ERROR);
         }
     }
 
@@ -269,6 +304,7 @@ public class GestionEstudiantesViewController extends CoreViewController {
                     listaEstudiantesDto.set(index, estudianteDto);
                     tableEstudiante.refresh();
                     tableEstudiante.getSelectionModel().select(index);
+                    emailService.enviarCorreoActualizacion(estudianteSeleccionado, estudianteDto);
                     mostrarMensaje("Notificación", "Estudiante actualizado",
                             "El Estudiante ha sido actualizado con éxito", Alert.AlertType.INFORMATION);
                     deselectTable();
@@ -297,24 +333,47 @@ public class GestionEstudiantesViewController extends CoreViewController {
 
 
     private boolean validarDatos(EstudianteDto estudianteDto) {
-        String mensaje = "";
-        if (estudianteDto.nombre().isEmpty()) {
-            mensaje += "El nombre del usuario es requerido.\n";
+        StringBuilder mensaje = new StringBuilder();
+
+        // Validación de campos vacíos
+        if (estudianteDto.nombre() == null || estudianteDto.nombre().isEmpty()) {
+            mensaje.append("El nombre del usuario es requerido.\n");
         }
-        if (estudianteDto.id().isEmpty()) {
-            mensaje += "El id del usuario es requerido.\n";
+        if (estudianteDto.id() == null || estudianteDto.id().isEmpty()) {
+            mensaje.append("El id del usuario es requerido.\n");
         }
-        if (estudianteDto.telefono().isEmpty()) {
-            mensaje += "El número de teléfono es requerido.\n";
+        if (estudianteDto.telefono() == null || estudianteDto.telefono().isEmpty()) {
+            mensaje.append("El número de teléfono es requerido.\n");
         }
-        if (estudianteDto.correo().isEmpty()) {
-            mensaje += "El email es requerido.\n";
+        if (estudianteDto.correo() == null || estudianteDto.correo().isEmpty()) {
+            mensaje.append("El email es requerido.\n");
+        } else if (!validarFormatoEmail(estudianteDto.correo())) {
+            mensaje.append("El formato del email no es válido.\n");
         }
-        if (!mensaje.isEmpty()) {
-            mostrarMensaje("Notificación de validación", "Datos no validos", mensaje, Alert.AlertType.WARNING);
+
+        if (mensaje.length() > 0) {
+            mostrarMensaje(
+                    "Notificación de validación",
+                    "Datos no válidos",
+                    mensaje.toString(),
+                    Alert.AlertType.WARNING
+            );
             return false;
         }
         return true;
+    }
+
+    /**
+     * Valida que el formato del email sea correcto usando expresiones regulares
+     * @param email el email a validar
+     * @return true si el formato es válido, false en caso contrario
+     */
+    private boolean validarFormatoEmail(String email) {
+        // Patrón para validar el email
+        Pattern patron = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        Matcher matcher = patron.matcher(email);
+        return matcher.find();
     }
 
     private EstudianteDto buildEstudianteDto() {

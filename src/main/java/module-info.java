@@ -5,6 +5,8 @@ module co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp {
     requires org.mapstruct;
     requires java.desktop;
     requires java.logging;
+    requires org.simplejavamail.core;
+    requires org.simplejavamail;
 
 
     opens co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp to javafx.fxml;

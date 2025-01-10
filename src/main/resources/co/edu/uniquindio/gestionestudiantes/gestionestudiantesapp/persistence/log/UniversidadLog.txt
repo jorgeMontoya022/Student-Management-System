@@ -1,170 +1,44 @@
-dic 28, 2024 5:26:43 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-28
-dic 28, 2024 10:05:17 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-28
-dic 28, 2024 10:36:03 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-28
-dic 28, 2024 10:37:35 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-28
-dic 28, 2024 10:39:09 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-28
-dic 28, 2024 11:18:07 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-28
-dic 28, 2024 11:20:25 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-28
-dic 28, 2024 11:21:57 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-28
-dic 28, 2024 11:29:23 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-28
-dic 28, 2024 11:38:29 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-28
-dic 28, 2024 11:46:31 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-28
-dic 28, 2024 11:48:53 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-28
-dic 28, 2024 11:54:08 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-28
-dic 29, 2024 5:42:45 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 5:46:27 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: actualizarUsario,Usuario actualizado: Jorge William Montoya Toro,2024-12-29
-dic 29, 2024 5:46:42 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: actualizarUsario,Usuario actualizado: Jorge William Montoya Toro,2024-12-29
-dic 29, 2024 5:47:25 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 5:47:43 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: actualizarUsario,Usuario actualizado: Jorge William Montoya Toro,2024-12-29
-dic 29, 2024 5:49:52 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 9:36:23 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 9:37:42 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 9:41:01 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 9:45:03 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 9:48:00 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 9:50:23 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 9:52:18 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 9:53:04 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 9:56:52 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 9:57:59 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 10:06:12 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 10:14:33 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 10:17:05 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 10:20:34 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 10:24:09 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 10:25:28 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 29, 2024 10:36:43 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-29
-dic 31, 2024 9:16:31 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-31
-dic 31, 2024 9:23:55 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-31
-dic 31, 2024 9:28:15 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2024-12-31
-ene 01, 2025 2:13:59 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-01
-ene 03, 2025 1:31:14 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-03
-ene 03, 2025 1:35:46 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-03
-ene 04, 2025 10:19:11 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 10:33:00 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 10:35:17 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 10:51:55 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 10:54:23 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 10:58:12 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 11:08:04 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 11:10:59 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 11:14:42 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 11:23:17 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 11:27:53 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 11:30:40 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 11:31:47 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 11:36:05 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 11:36:46 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 11:38:28 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 11:43:40 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 11:45:58 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: agregarEstudiante,Estudiante agregado: 10970403020,2025-01-04
-ene 04, 2025 11:46:59 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 04, 2025 11:47:41 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-04
-ene 05, 2025 9:03:33 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 05, 2025 9:26:45 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 05, 2025 9:39:13 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 05, 2025 9:42:30 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 05, 2025 9:50:43 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 05, 2025 9:59:37 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 05, 2025 10:22:09 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 05, 2025 10:31:09 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 05, 2025 10:34:49 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 05, 2025 10:35:42 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 05, 2025 10:44:26 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 05, 2025 10:50:39 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 05, 2025 11:13:50 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 05, 2025 11:15:55 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 05, 2025 11:18:57 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 05, 2025 11:31:16 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 05, 2025 11:51:13 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 05, 2025 11:55:35 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-05
-ene 06, 2025 12:37:06 A. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-06
-ene 06, 2025 12:42:06 A. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-06
-ene 06, 2025 12:44:49 A. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-06
-ene 06, 2025 12:50:18 A. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-06
-ene 06, 2025 1:09:18 A. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
-INFO: login,Login,2025-01-06
+ene 09, 2025 5:42:35 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-09
+ene 09, 2025 7:29:03 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-09
+ene 09, 2025 7:29:50 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-09
+ene 09, 2025 7:30:33 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: removeUser,Usuario eliminado: 1095032923,2025-01-09
+ene 09, 2025 8:41:53 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-09
+ene 09, 2025 8:42:46 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-09
+ene 09, 2025 8:44:31 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-09
+ene 09, 2025 8:46:15 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: agregarEstudiante,Estudiante agregado: 1097040933,2025-01-09
+ene 09, 2025 8:53:56 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-09
+ene 09, 2025 8:54:31 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: removeUser,Usuario eliminado: 1097040933,2025-01-09
+ene 09, 2025 8:55:20 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: agregarEstudiante,Estudiante agregado: 1097040933,2025-01-09
+ene 09, 2025 9:00:24 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: removeUser,Usuario eliminado: 1097032932,2025-01-09
+ene 09, 2025 9:00:57 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: agregarEstudiante,Estudiante agregado: 1097032932,2025-01-09
+ene 09, 2025 9:10:09 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-09
+ene 09, 2025 9:10:54 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: removeUser,Usuario eliminado: 1097040933,2025-01-09
+ene 09, 2025 9:18:05 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-09
+ene 09, 2025 9:19:11 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: agregarEstudiante,Estudiante agregado: 1097040933,2025-01-09
+ene 09, 2025 9:19:58 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: removeUser,Usuario eliminado: 1097032932,2025-01-09
+ene 09, 2025 9:33:54 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-09
+ene 09, 2025 9:35:14 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: actualizarUsario,Usuario actualizado: Cesar Augusto Montoya Toro,2025-01-09
+ene 09, 2025 9:36:30 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: agregarEstudiante,Estudiante agregado: 1097032932,2025-01-09
+ene 09, 2025 9:37:17 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: actualizarUsario,Usuario actualizado: Jorge William Montoya Toro,2025-01-09

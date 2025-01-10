@@ -4,7 +4,7 @@
   <void property="admin">
    <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Admin">
     <void property="correo">
-     <string>jorgew.montoyat@uqvirtual.edu.co</string>
+     <string>teayudamo3@gmail.com</string>
     </void>
     <void property="id">
      <string>25024333</string>
@@ -104,10 +104,10 @@
                </void>
               </void>
               <void property="nombre">
-               <string>Mariana López Cardona Celemín</string>
+               <string>Mariana López Cardona</string>
               </void>
               <void property="telefono">
-               <string>3127896543</string>
+               <string>3117896543</string>
               </void>
              </object>
             </void>
@@ -131,7 +131,7 @@
          </void>
         </void>
         <void property="nombre">
-         <string>Jorge William Montoya Toro</string>
+         <string>Jorge William Montoya</string>
         </void>
         <void property="telefono">
          <string>3244544139</string>
@@ -185,9 +185,6 @@
   </void>
   <void property="listaEstudiantes">
    <void method="add">
-    <object idref="Estudiante0"/>
-   </void>
-   <void method="add">
     <object idref="Estudiante1"/>
    </void>
    <void method="add">
@@ -196,16 +193,32 @@
    <void method="add">
     <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Estudiante">
      <void property="correo">
-      <string>juanm@gmail.com</string>
+      <string>camt_99@hotmail.com</string>
      </void>
      <void property="id">
-      <string>10970403020</string>
+      <string>1097040933</string>
      </void>
      <void property="nombre">
-      <string>Juan David Montoya Toro</string>
+      <string>Cesar Augusto Montoya Toro</string>
      </void>
      <void property="telefono">
       <string>3218941022</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Estudiante">
+     <void property="correo">
+      <string>jorgetoro708@gmail.com</string>
+     </void>
+     <void property="id">
+      <string>1097032932</string>
+     </void>
+     <void property="nombre">
+      <string>Jorge William Montoya Toro</string>
+     </void>
+     <void property="telefono">
+      <string>3128185449</string>
      </void>
     </object>
    </void>
