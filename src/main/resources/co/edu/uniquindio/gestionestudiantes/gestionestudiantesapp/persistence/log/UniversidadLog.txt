@@ -42,3 +42,21 @@ ene 09, 2025 9:36:30 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudia
 INFO: agregarEstudiante,Estudiante agregado: 1097032932,2025-01-09
 ene 09, 2025 9:37:17 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
 INFO: actualizarUsario,Usuario actualizado: Jorge William Montoya Toro,2025-01-09
+ene 11, 2025 1:16:45 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-11
+ene 11, 2025 1:23:25 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-11
+ene 11, 2025 1:45:21 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-11
+ene 11, 2025 1:46:20 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: removeUser,Usuario eliminado: 1097032932,2025-01-11
+ene 11, 2025 1:50:53 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: agregarEstudiante,Estudiante agregado: 1092851471,2025-01-11
+ene 11, 2025 2:00:13 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-11
+ene 11, 2025 2:01:56 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-11
+ene 11, 2025 2:03:07 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-11
+ene 11, 2025 2:05:51 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-11

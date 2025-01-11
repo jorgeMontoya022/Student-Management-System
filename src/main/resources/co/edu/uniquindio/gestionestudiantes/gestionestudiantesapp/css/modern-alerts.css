@@ -1,0 +1,94 @@
+.modern-alert {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 3);
+}
+
+.modern-alert > *.header-panel {
+    -fx-background-color: transparent;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.modern-alert > *.content.label {
+    -fx-font-size: 14px;
+    -fx-padding: 15px 10px;
+    -fx-text-fill: #2d3436;
+}
+
+.modern-alert .button-bar {
+    -fx-padding: 10px;
+}
+
+.modern-alert .button {
+    -fx-background-radius: 8px;
+    -fx-padding: 8px 15px;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+/* Estilos específicos para cada tipo de alerta */
+.error-alert {
+    -fx-border-color: #ff4757;
+}
+
+.error-alert .button-bar .button {
+    -fx-background-color: #ff4757;
+    -fx-text-fill: white;
+}
+
+.warning-alert {
+    -fx-border-color: #ffa502;
+}
+
+.warning-alert .button-bar .button {
+    -fx-background-color: #ffa502;
+    -fx-text-fill: white;
+}
+
+.info-alert {
+    -fx-border-color: #469fff;
+}
+
+.info-alert .button-bar .button {
+    -fx-background-color: #469fff;
+    -fx-text-fill: white;
+}
+
+.confirmation-alert {
+    -fx-border-color: #2ed573;
+}
+
+.confirm-button {
+    -fx-background-color: #2ed573 !important;
+    -fx-text-fill: white !important;
+}
+
+.cancel-button {
+    -fx-background-color: #ced6e0 !important;
+    -fx-text-fill: #2d3436 !important;
+}
+
+.modern-text-area {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 8px;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 8px;
+    -fx-font-family: 'SF Mono', 'Consolas', monospace;
+    -fx-font-size: 13px;
+}
+
+.modern-text-area .content {
+    -fx-background-color: transparent;
+}
+
+/* Hover effects */
+.modern-alert .button:hover {
+    -fx-opacity: 0.9;
+}
+
+.modern-alert .button:pressed {
+    -fx-opacity: 0.8;
+}

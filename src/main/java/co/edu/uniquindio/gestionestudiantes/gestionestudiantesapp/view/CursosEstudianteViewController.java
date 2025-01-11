@@ -3,17 +3,25 @@ package co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.controller.GestionEstudianteController;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.CursoDto;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.EstudianteDto;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.services.PdfExportService;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.FileChooser;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 public class CursosEstudianteViewController {
+
+    @FXML
+    private Button btnExportarLista;
 
     @FXML
     private ComboBox<String> cbtipoFiltro;
@@ -41,6 +49,51 @@ public class CursosEstudianteViewController {
 
     @FXML
     private TableColumn<CursoDto, String> tcProfesor;
+
+    @FXML
+    void onExportarLista(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Guardar reporte PDF");
+        fileChooser.getExtensionFilters().add(
+                new FileChooser.ExtensionFilter("PDF Files", "*.pdf")
+        );
+        fileChooser.setInitialFileName("cursos_" +
+                estudianteSeleccionado.nombre().replaceAll("\\s+", "_").toLowerCase() + ".pdf");
+
+        File file = fileChooser.showSaveDialog(btnExportarLista.getScene().getWindow());
+
+        if (file != null) {
+            try {
+                PdfExportService exportService = new PdfExportService();
+                exportService.exportarCursosEstudiante(
+                        file.getAbsolutePath(),
+                        estudianteSeleccionado,
+                        new ArrayList<>(listaCursosDto),
+                        obtenerPeriodoAcadémico()
+                );
+
+                mostrarMensajeExito();
+            } catch (Exception e) {
+                mostrarMensajeError(e.getMessage());
+            }
+        }
+    }
+
+    private void mostrarMensajeExito() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Éxito");
+        alert.setHeaderText(null);
+        alert.setContentText("El reporte PDF se ha generado exitosamente.");
+        alert.showAndWait();
+    }
+
+    private void mostrarMensajeError(String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText("Error al generar el PDF: " + mensaje);
+        alert.showAndWait();
+    }
 
     @FXML
     private TextField txtFiltrarCurso;

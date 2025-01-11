@@ -209,16 +209,16 @@
    <void method="add">
     <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Estudiante">
      <void property="correo">
-      <string>jorgetoro708@gmail.com</string>
+      <string>salome.perezf@uqvirtual.edu.co</string>
      </void>
      <void property="id">
-      <string>1097032932</string>
+      <string>1092851471</string>
      </void>
      <void property="nombre">
-      <string>Jorge William Montoya Toro</string>
+      <string>Salomé Perez Franco</string>
      </void>
      <void property="telefono">
-      <string>3128185449</string>
+      <string>3170755862</string>
      </void>
     </object>
    </void>

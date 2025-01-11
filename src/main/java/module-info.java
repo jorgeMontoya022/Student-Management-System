@@ -7,6 +7,7 @@ module co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp {
     requires java.logging;
     requires org.simplejavamail.core;
     requires org.simplejavamail;
+    requires itextpdf;
 
 
     opens co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp to javafx.fxml;

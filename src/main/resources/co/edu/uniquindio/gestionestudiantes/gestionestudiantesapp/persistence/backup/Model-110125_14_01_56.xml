@@ -202,7 +202,23 @@
       <string>Cesar Augusto Montoya Toro</string>
      </void>
      <void property="telefono">
-      <string>3145708960</string>
+      <string>3218941022</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Estudiante">
+     <void property="correo">
+      <string>salome.perezf@uqvirtual.edu.co</string>
+     </void>
+     <void property="id">
+      <string>1092851471</string>
+     </void>
+     <void property="nombre">
+      <string>Salomé Perez Franco</string>
+     </void>
+     <void property="telefono">
+      <string>3170755862</string>
      </void>
     </object>
    </void>
