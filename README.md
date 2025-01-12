@@ -90,11 +90,10 @@ The **Student Management Project** is a comprehensive application designed to st
 - Student performance analytics
 - Enhanced email notification system with additional templates
 - Database migration options
-- Mobile-responsive interface
 - Real-time grade notifications
 - Course schedule visualization
 - Academic progress tracking
-- Direct communication with administrators
+- Direct communication with administrator
 
 ## 👥 Target Users
 - Educational institution administrators
