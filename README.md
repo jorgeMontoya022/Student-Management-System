@@ -13,6 +13,14 @@ The **Student Management Project** is a comprehensive application designed to st
   - Email address
   - Phone number
   - Additional contact details
+- Automatic email notifications to students upon registration
+
+### 📧 Email Notification System
+- Automated welcome emails to newly registered students
+- Instant notification delivery
+- Professional email templates
+- Registration confirmation details
+- Institution contact information included
 
 ### 📚 Course Management
 - Register and manage academic courses
@@ -45,6 +53,7 @@ The **Student Management Project** is a comprehensive application designed to st
   - Administrator-only permissions
   - Data validation and integrity checks
 - **🔄 Real-Time Updates**: Immediate reflection of changes in the system
+- **📨 Email Integration**: Automated communication system
 
 ## 🛠️ Technologies Used
 - 🖼️ **JavaFX**: Modern, feature-rich UI framework
@@ -52,6 +61,7 @@ The **Student Management Project** is a comprehensive application designed to st
 - 📂 **XML**: Lightweight and efficient data storage
 - ☕ **Java**: Robust backend implementation
 - 📄 **iText/PDFBox**: PDF document generation (suggested library)
+- 📧 **JavaMail API**: Email notification system
 
 ## 🎯 Purpose and Benefits
 - **Educational Institution Management**: Streamline administrative processes
@@ -59,27 +69,54 @@ The **Student Management Project** is a comprehensive application designed to st
 - **Efficiency**: Reduce paperwork and manual data entry
 - **Accessibility**: Easy access to student and course information
 - **Documentation**: Generate professional academic reports
+- **Communication**: Automated student notifications
 
 ## 🚀 Future Enhancements
+### 👤 Student Portal Access
+- Personal login credentials for students
+- Secure authentication system
+- Student dashboard featuring:
+  - Personal information viewing and updates
+  - Enrolled courses overview
+  - Individual course grades and performance
+  - Academic history
+  - GPA calculation
+  - Download academic reports
+
+### 📱 Additional Features
 - Integration with academic calendar
 - Grade management system
 - Attendance tracking
 - Student performance analytics
-- Email notification system
+- Enhanced email notification system with additional templates
 - Database migration options
+- Mobile-responsive interface
+- Real-time grade notifications
+- Course schedule visualization
+- Academic progress tracking
+- Direct communication with administrators
 
 ## 👥 Target Users
 - Educational institution administrators
 - Academic coordinators
 - Administrative staff
 - Course managers
+- Students (future portal access & email recipients)
 
 ## 💡 Getting Started
 1. Install Java Development Kit (JDK)
 2. Clone the repository
 3. Configure development environment
-4. Run the application
-5. Login with administrator credentials
+4. Set up email server credentials
+5. Run the application
+6. Login with administrator credentials
+
+## 📨 Email Configuration
+To enable email notifications:
+1. Configure SMTP server details
+2. Set up email credentials
+3. Customize email templates
+4. Test email functionality
 
 ## 📝 Note
-This project is under active development, with regular updates and improvements being made to enhance functionality and user experience.
+This project is under active development, with regular updates and improvements being made to enhance functionality and user experience. The upcoming student portal will significantly enhance the system's functionality by providing direct access to academic information for students.
