@@ -1,5 +1,6 @@
 package co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,6 +13,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.util.Optional;
+import java.util.function.Function;
 
 public abstract class CoreViewController {
 
@@ -125,6 +127,26 @@ public abstract class CoreViewController {
     public void closeWindow(ActionEvent actionEvent) {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();
+    }
+
+    protected  <T> void initializeComboBox(ComboBox<T> comboBox,
+                                           ObservableList<T> items,
+                                           Function<T, String> displayFunction) {
+        comboBox.setItems(items);
+        comboBox.setCellFactory(lv -> new ListCell<T>() {
+            @Override
+            protected void updateItem(T item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty ? "" : displayFunction.apply(item));
+            }
+        });
+        comboBox.setButtonCell(new ListCell<T>() {
+            @Override
+            protected void updateItem(T item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty ? "" : displayFunction.apply(item));
+            }
+        });
     }
 
 }

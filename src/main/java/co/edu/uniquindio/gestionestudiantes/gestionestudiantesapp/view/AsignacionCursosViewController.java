@@ -2,6 +2,15 @@ package co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.controller.GestionCursosController;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.CursoDto;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.EstudianteDto;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Admin;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.session.Sesion;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -11,7 +20,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-public class AsignacionCursosViewController {
+public class AsignacionCursosViewController extends CoreViewController {
+
+    Admin loggedAdmin;
+    ObservableList<EstudianteDto>listaEstudiantesDto = FXCollections.observableArrayList();
+    EstudianteDto estudianteSeleccionado;
+
+    GestionCursosController gestionCursosController;
 
     @FXML
     private ResourceBundle resources;
@@ -26,31 +41,31 @@ public class AsignacionCursosViewController {
     private Button btnEliminarCurso;
 
     @FXML
-    private ComboBox<?> cbCursos;
+    private ComboBox<CursoDto> cbCursos;
 
     @FXML
     private Label lblEstudianteSeleccionado;
 
     @FXML
-    private TableView<?> tableCursosAsignados;
+    private TableView<CursoDto> tableCursosAsignados;
 
     @FXML
-    private TableView<?> tableEstudiantes;
+    private TableView<EstudianteDto> tableEstudiantes;
 
     @FXML
-    private TableColumn<?, ?> tcCodigo;
+    private TableColumn<CursoDto, String> tcCodigo;
 
     @FXML
-    private TableColumn<?, ?> tcCurso;
+    private TableColumn<CursoDto, String> tcCurso;
 
     @FXML
-    private TableColumn<?, ?> tcDocumento;
+    private TableColumn<EstudianteDto, String> tcDocumento;
 
     @FXML
-    private TableColumn<?, ?> tcNombre;
+    private TableColumn<EstudianteDto, String> tcNombre;
 
     @FXML
-    private TableColumn<?, ?> tcProfesor;
+    private TableColumn<CursoDto, String> tcProfesor;
 
     @FXML
     private TextField txtBuscarEstudiante;
@@ -67,19 +82,45 @@ public class AsignacionCursosViewController {
 
     @FXML
     void initialize() {
-        assert btnAsignar != null : "fx:id=\"btnAsignar\" was not injected: check your FXML file 'asignacion-cursos-view.fxml'.";
-        assert btnEliminarCurso != null : "fx:id=\"btnEliminarCurso\" was not injected: check your FXML file 'asignacion-cursos-view.fxml'.";
-        assert cbCursos != null : "fx:id=\"cbCursos\" was not injected: check your FXML file 'asignacion-cursos-view.fxml'.";
-        assert lblEstudianteSeleccionado != null : "fx:id=\"lblEstudianteSeleccionado\" was not injected: check your FXML file 'asignacion-cursos-view.fxml'.";
-        assert tableCursosAsignados != null : "fx:id=\"tableCursosAsignados\" was not injected: check your FXML file 'asignacion-cursos-view.fxml'.";
-        assert tableEstudiantes != null : "fx:id=\"tableEstudiantes\" was not injected: check your FXML file 'asignacion-cursos-view.fxml'.";
-        assert tcCodigo != null : "fx:id=\"tcCodigo\" was not injected: check your FXML file 'asignacion-cursos-view.fxml'.";
-        assert tcCurso != null : "fx:id=\"tcCurso\" was not injected: check your FXML file 'asignacion-cursos-view.fxml'.";
-        assert tcDocumento != null : "fx:id=\"tcDocumento\" was not injected: check your FXML file 'asignacion-cursos-view.fxml'.";
-        assert tcNombre != null : "fx:id=\"tcNombre\" was not injected: check your FXML file 'asignacion-cursos-view.fxml'.";
-        assert tcProfesor != null : "fx:id=\"tcProfesor\" was not injected: check your FXML file 'asignacion-cursos-view.fxml'.";
-        assert txtBuscarEstudiante != null : "fx:id=\"txtBuscarEstudiante\" was not injected: check your FXML file 'asignacion-cursos-view.fxml'.";
+        gestionCursosController = new GestionCursosController();
+        loggedAdmin = (Admin) Sesion.getInstance().getPersona();
+        initView();
 
     }
+
+    private void initView() {
+        initDataBinding();
+        getEstudiantes();
+        tableEstudiantes.getItems().clear();
+        tableEstudiantes.setItems(listaEstudiantesDto);
+        cargarCursosCombobox();
+    }
+
+
+    private void initDataBinding() {
+        tcNombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombre()));
+        tcDocumento.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().id()));
+        tcCurso.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombre()));
+        tcCodigo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().codigo()));
+        tcProfesor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombreProfesor()));
+
+    }
+
+    private void getEstudiantes() {
+        listaEstudiantesDto.clear();
+        listaEstudiantesDto.addAll(gestionCursosController.getEstudiantes());
+    }
+
+    private void cargarCursosCombobox() {
+        ObservableList<CursoDto> listaCursosDto = FXCollections.observableArrayList(gestionCursosController.getCursos());
+        cbCursos.setItems(listaCursosDto);
+
+        initializeComboBox(cbCursos, listaCursosDto, cursoDto -> cursoDto.nombre());
+    }
+
+
+
+
+
 
 }

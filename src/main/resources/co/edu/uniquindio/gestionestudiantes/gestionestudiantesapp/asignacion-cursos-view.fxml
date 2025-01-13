@@ -124,7 +124,7 @@
                             </font>
                         </Label>
 
-                        <ComboBox fx:id="cbCursos" prefWidth="Infinity" promptText="Seleccione un curso"  style="-fx-background-color: #f8f9fa; -fx-border-color: #2196f3; -fx-border-width: 2; -fx-border-radius: 5;" />
+                        <ComboBox fx:id="cbCursos" prefWidth="Infinity" promptText="Seleccione un curso" style="-fx-background-color: #f8f9fa; -fx-border-color: #469fff22; -fx-border-width: 2; -fx-border-radius: 5;" />
 
                         <HBox alignment="CENTER_RIGHT" spacing="10.0">
                             <Button fx:id="btnAsignar" onAction="#onAsignarCurso" style="-fx-background-color: #2196f3; -fx-text-fill: white; -fx-background-radius: 5;" text="Asignar Curso" />
