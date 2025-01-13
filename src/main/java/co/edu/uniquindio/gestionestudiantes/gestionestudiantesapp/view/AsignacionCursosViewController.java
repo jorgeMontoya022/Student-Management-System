@@ -1,6 +1,7 @@
 package co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.controller.GestionCursosController;
@@ -13,17 +14,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class AsignacionCursosViewController extends CoreViewController {
 
     Admin loggedAdmin;
-    ObservableList<EstudianteDto>listaEstudiantesDto = FXCollections.observableArrayList();
+    ObservableList<EstudianteDto> listaEstudiantesDto = FXCollections.observableArrayList();
+    ObservableList<CursoDto> listaCursosAsignadosDto = FXCollections.observableArrayList();
     EstudianteDto estudianteSeleccionado;
 
     GestionCursosController gestionCursosController;
@@ -72,7 +69,53 @@ public class AsignacionCursosViewController extends CoreViewController {
 
     @FXML
     void onAsignarCurso(ActionEvent event) {
+        CursoDto cursoDto = buildCursoDto();
+        if(cursoDto == null) {
+            mostrarMensaje("Error", "Datos no válidos", "No se ha seleccionado un curso válido", Alert.AlertType.ERROR);
+            return;
+        }
 
+        if(validarDatosAsignacion(cursoDto)){
+            if(gestionCursosController.asignarCursoEstudiante(estudianteSeleccionado.id(), cursoDto.codigo())) {
+                // Solo actualizamos la vista después de una asignación exitosa
+                actualizarCursosEstudiante();
+                mostrarMensaje("Notificación", "Curso asignado",
+                        "El curso ha sido asignado con éxito", Alert.AlertType.INFORMATION);
+                cbCursos.setValue(null);
+            } else {
+                mostrarMensaje("Error", "Curso no asignado",
+                        "El curso no pudo ser asignado", Alert.AlertType.ERROR);
+            }
+        }
+    }
+
+    private CursoDto buildCursoDto() {
+        return cbCursos.getValue();
+    }
+
+
+    private boolean validarDatosAsignacion(CursoDto cursoDto) {
+        String mensaje = "";
+
+        if(estudianteSeleccionado == null) {
+            mensaje += "Debe seleccionar un estudiante\n";
+        }
+
+        if(cursoDto == null) {
+            mensaje += "Debe seleccionar un curso\n";
+        }
+
+        // Modificar esta validación para usar el controlador
+        if(gestionCursosController.tieneCursoAsignado(estudianteSeleccionado.id(), cursoDto.codigo())) {
+            mensaje += "El estudiante ya tiene este curso asignado\n";
+        }
+
+        if(mensaje.isEmpty()) {
+            return true;
+        } else {
+            mostrarMensaje("Error", "Datos no válidos", mensaje, Alert.AlertType.ERROR);
+            return false;
+        }
     }
 
     @FXML
@@ -90,9 +133,11 @@ public class AsignacionCursosViewController extends CoreViewController {
 
     private void initView() {
         initDataBinding();
+        initializeTableListeners();
         getEstudiantes();
         tableEstudiantes.getItems().clear();
         tableEstudiantes.setItems(listaEstudiantesDto);
+        tableCursosAsignados.setItems(listaCursosAsignadosDto);
         cargarCursosCombobox();
     }
 
@@ -106,6 +151,29 @@ public class AsignacionCursosViewController extends CoreViewController {
 
     }
 
+    private void initializeTableListeners() {
+        tableEstudiantes.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                estudianteSeleccionado = newSelection;
+                lblEstudianteSeleccionado.setText("Estudiante: " + estudianteSeleccionado.nombre());
+                actualizarCursosEstudiante();
+            }
+        });
+    }
+
+    private void actualizarCursosEstudiante() {
+        if (estudianteSeleccionado != null) {
+            listaCursosAsignadosDto.clear();
+            // Asegurarnos de que estamos obteniendo la lista actualizada de cursos
+            List<CursoDto> cursosEstudiante = gestionCursosController.getCursosEstudiante(estudianteSeleccionado);
+            if (cursosEstudiante != null) {
+                listaCursosAsignadosDto.addAll(cursosEstudiante);
+            }
+            // Forzar actualización de la tabla
+            tableCursosAsignados.refresh();
+        }
+    }
+
     private void getEstudiantes() {
         listaEstudiantesDto.clear();
         listaEstudiantesDto.addAll(gestionCursosController.getEstudiantes());
@@ -117,10 +185,6 @@ public class AsignacionCursosViewController extends CoreViewController {
 
         initializeComboBox(cbCursos, listaCursosDto, cursoDto -> cursoDto.nombre());
     }
-
-
-
-
 
 
 }

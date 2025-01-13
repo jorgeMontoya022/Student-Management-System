@@ -162,6 +162,28 @@ public class ModelFactory {
         return universidad.validarAcceso(correo, id);
     }
 
+    public boolean asignarCursoEstudiante(String idEstudiante, String codigoCurso) {
+        try {
+            if (universidad.asignarCursoEstudiante(idEstudiante, codigoCurso)) {
+                registerSystemActions("Curso " + codigoCurso + "a " + idEstudiante, 1, "AsignarCurso");
+                saveXMLResource();
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            registerSystemActions(e.getMessage(), 3, "AsignarCurso");
+            return false;
+        }
+        return false;
+    }
+
+    public boolean tieneCursoAsignado(String idEstudiante, String codigoCurso) {
+        return universidad.tieneCursoAsignado(idEstudiante, codigoCurso);
+    }
+
+
+
+
 
 
 }

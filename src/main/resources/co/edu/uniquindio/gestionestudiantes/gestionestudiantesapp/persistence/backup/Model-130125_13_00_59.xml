@@ -102,6 +102,19 @@
                <void method="add">
                 <object idref="Curso1"/>
                </void>
+               <void method="add">
+                <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Curso" id="Curso3">
+                 <void property="codigo">
+                  <string>CS105</string>
+                 </void>
+                 <void property="nombre">
+                  <string>Redes de Computadores</string>
+                 </void>
+                 <void property="nombreProfesor">
+                  <string>Carlos Valencia</string>
+                 </void>
+                </object>
+               </void>
               </void>
               <void property="nombre">
                <string>Mariana López Cardona</string>
@@ -128,6 +141,9 @@
          </void>
          <void method="add">
           <object idref="Curso2"/>
+         </void>
+         <void method="add">
+          <object idref="Curso3"/>
          </void>
         </void>
         <void property="nombre">
@@ -170,17 +186,7 @@
     </object>
    </void>
    <void method="add">
-    <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Curso">
-     <void property="codigo">
-      <string>CS105</string>
-     </void>
-     <void property="nombre">
-      <string>Redes de Computadores</string>
-     </void>
-     <void property="nombreProfesor">
-      <string>Carlos Valencia</string>
-     </void>
-    </object>
+    <object idref="Curso3"/>
    </void>
   </void>
   <void property="listaEstudiantes">

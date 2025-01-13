@@ -83,9 +83,9 @@ public class Universidad implements Serializable {
         throw new EstudianteException("Estudiante con ID " + id + "no encontrado");
     }
 
-    public boolean actualizarEstudiante(String id, Estudiante estudiante) throws EstudianteException{
+    public boolean actualizarEstudiante(String id, Estudiante estudiante) throws EstudianteException {
         Estudiante estudianteActual = buscarEstudianteId(id);
-        if(estudianteActual == null) {
+        if (estudianteActual == null) {
             throw new EstudianteException("El estudiante a actualizar no existe");
         } else {
             estudianteActual.setNombre(estudiante.getNombre());
@@ -93,7 +93,7 @@ public class Universidad implements Serializable {
             estudianteActual.setId(estudiante.getId());
             estudianteActual.setCorreo(estudiante.getCorreo());
 
-            if(estudiante.getListaCursos() != null) {
+            if (estudiante.getListaCursos() != null) {
                 estudianteActual.getListaCursos().addAll(estudiante.getListaCursos());
 
             }
@@ -102,7 +102,7 @@ public class Universidad implements Serializable {
     }
 
     private Estudiante buscarEstudianteId(String id) {
-        for (Estudiante estudiante: getListaEstudiantes()) {
+        for (Estudiante estudiante : getListaEstudiantes()) {
             if (estudiante.getId().equals(id)) {
                 return estudiante;
             }
@@ -120,7 +120,7 @@ public class Universidad implements Serializable {
     }
 
     public boolean verificarCursoExiste(String codigo) {
-        for (Curso curso: listaCursos) {
+        for (Curso curso : listaCursos) {
             if (curso.getCodigo().equals(codigo)) {
                 return true;
             }
@@ -137,13 +137,13 @@ public class Universidad implements Serializable {
     }
 
     public Persona validarAcceso(String correo, String id) throws Exception {
-        if(admin != null && admin.getCorreo().equals(correo) &&
-        admin.getId().equals(id)){
+        if (admin != null && admin.getCorreo().equals(correo) &&
+                admin.getId().equals(id)) {
             return admin;
         }
         for (Estudiante estudiante : listaEstudiantes) {
             if (verificarEstudianteExiste(id)) {
-                if(estudiante.getCorreo().equals(correo) && estudiante.getId().equals(id)) {
+                if (estudiante.getCorreo().equals(correo) && estudiante.getId().equals(id)) {
                     return estudiante;
 
                 }
@@ -152,5 +152,48 @@ public class Universidad implements Serializable {
             }
         }
         throw new Exception("Identificación o documento de identidad incorrecto");
+    }
+
+    public boolean asignarCursoEstudiante(String idEstudiante, String codigoCurso) {
+        Estudiante estudiante = buscarEstudianteId(idEstudiante);
+        Curso curso = verificarCursoExisteCodigo(codigoCurso);
+
+        // Verificar que tanto el estudiante como el curso existan
+        if (estudiante == null || curso == null) {
+            return false;
+        }
+
+        // Verificar si el estudiante ya tiene el curso
+        for (Curso cursoEstudiante : estudiante.getListaCursos()) {
+            if (cursoEstudiante.getCodigo().equals(codigoCurso)) {
+                return false; // El curso ya está asignado
+            }
+        }
+
+        // Si llegamos aquí, el curso no está asignado, así que lo agregamos
+        estudiante.getListaCursos().add(curso);
+        return true;
+    }
+
+    private Curso verificarCursoExisteCodigo(String codigoCurso) {
+
+        for (Curso curso : listaCursos) {
+            if (curso.getCodigo().equals(codigoCurso)) {
+                return curso;
+            }
+        }
+        return null;
+    }
+
+    public boolean tieneCursoAsignado(String idEstudiante, String codigoCurso) {
+        Estudiante estudiante = buscarEstudianteId(idEstudiante);
+        if (estudiante != null) {
+            for (Curso curso : estudiante.getListaCursos()) {
+                if (curso.getCodigo().equals(codigoCurso)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
