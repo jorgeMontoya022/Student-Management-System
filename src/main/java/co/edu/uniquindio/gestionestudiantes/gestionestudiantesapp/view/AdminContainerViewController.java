@@ -33,16 +33,18 @@ public class AdminContainerViewController extends CoreViewController {
     @FXML
     private AnchorPane estudiantesView;
 
+    private static final String BUTTON_ACTIVE = "-fx-background-color: #303f9f; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 15 20; -fx-pref-width: 250;";
+    private static final String BUTTON_INACTIVE = "-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 15 20; -fx-pref-width: 250;";
+
     @FXML
     void onNavigateToAsignacion(ActionEvent event) {
         asignacionView.setVisible(true);
         cursosView.setVisible(false);
         estudiantesView.setVisible(false);
 
-        // Estilos de los botones
-        btnAsignacion.setStyle("-fx-background-color: #303f9f; -fx-text-fill: white;");
-        btnCursos.setStyle("-fx-background-color: transparent; -fx-text-fill: white;");
-        btnEstudiantes.setStyle("-fx-background-color: transparent; -fx-text-fill: white;");
+        btnAsignacion.setStyle(BUTTON_ACTIVE);
+        btnCursos.setStyle(BUTTON_INACTIVE);
+        btnEstudiantes.setStyle(BUTTON_INACTIVE);
     }
 
     @FXML
@@ -51,12 +53,10 @@ public class AdminContainerViewController extends CoreViewController {
         estudiantesView.setVisible(false);
         asignacionView.setVisible(false);
 
-        // Estilos de los botones
-        btnCursos.setStyle("-fx-background-color: #303f9f; -fx-text-fill: white;");
-        btnAsignacion.setStyle("-fx-background-color: transparent; -fx-text-fill: white;");
-        btnEstudiantes.setStyle("-fx-background-color: transparent; -fx-text-fill: white;");
+        btnCursos.setStyle(BUTTON_ACTIVE);
+        btnAsignacion.setStyle(BUTTON_INACTIVE);
+        btnEstudiantes.setStyle(BUTTON_INACTIVE);
     }
-
 
     @FXML
     void onNavigateToEstudiantes(ActionEvent event) {
@@ -64,12 +64,9 @@ public class AdminContainerViewController extends CoreViewController {
         cursosView.setVisible(false);
         asignacionView.setVisible(false);
 
-        // Actualiza los estilos de los botones
-        btnEstudiantes.setStyle("-fx-background-color: #303f9f; -fx-text-fill: white;");
-        btnCursos.setStyle("-fx-background-color: transparent; -fx-text-fill: white;");
-        btnAsignacion.setStyle("-fx-background-color: transparent; -fx-text-fill: white;");
-
-
+        btnEstudiantes.setStyle(BUTTON_ACTIVE);
+        btnCursos.setStyle(BUTTON_INACTIVE);
+        btnAsignacion.setStyle(BUTTON_INACTIVE);
     }
 
     @FXML
@@ -77,11 +74,11 @@ public class AdminContainerViewController extends CoreViewController {
         browseWindow("/co/edu/uniquindio/gestionestudiantes/gestionestudiantesapp/datos-admin-view.fxml", "Datos del Administrador", event);
     }
 
-
     @FXML
     void initialize() {
-
-
+        // Establecer el estilo inicial de los botones
+        btnEstudiantes.setStyle(BUTTON_ACTIVE);
+        btnCursos.setStyle(BUTTON_INACTIVE);
+        btnAsignacion.setStyle(BUTTON_INACTIVE);
     }
-
 }

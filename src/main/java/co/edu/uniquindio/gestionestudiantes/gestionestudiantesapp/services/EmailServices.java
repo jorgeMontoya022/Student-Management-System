@@ -1,17 +1,21 @@
 package co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.services;
 
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.EstudianteDto;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Persona;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.EmailUtil;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class EmailServices {
     private static final String INSTITUCION_NOMBRE = "Universidad TE AYUDAMOS";
     private static final String FIRMA_OFICIAL = """
-            
+                        
             ------------------------------------------
             Universidad TE AYUDAMOS
             Educación de Calidad para un Futuro Mejor
             Tel: (+57) 6 7359300
-            Email: contacto@teayudamos.edu.co
+            Email: teayudamo3@gmail.com
             Dirección: Carrera 15 Calle 12 Norte
             Armenia, Quindío, Colombia
             www.teayudamos.edu.co
@@ -67,23 +71,23 @@ public class EmailServices {
 
     private String construirMensajeEliminacion(EstudianteDto estudiante) {
         return String.format("""
-            Estimado/a %s,
-                    
-            Te informamos que tu registro en %s ha sido eliminado del sistema.
-                    
-            Datos del registro eliminado:
-            - Nombre: %s
-            - ID: %s
-            - Correo: %s
-            - Teléfono: %s
-                    
-            Si consideras que esto ha sido un error o necesitas información adicional, 
-            por favor contáctanos respondiendo a este correo.
-                    
-            Saludos cordiales,
-            Departamento de Registro y Control
-            Universidad TE AYUDAMOS%s
-            """,
+                        Estimado/a %s,
+                                
+                        Te informamos que tu registro en %s ha sido eliminado del sistema.
+                                
+                        Datos del registro eliminado:
+                        - Nombre: %s
+                        - ID: %s
+                        - Correo: %s
+                        - Teléfono: %s
+                                
+                        Si consideras que esto ha sido un error o necesitas información adicional, 
+                        por favor contáctanos respondiendo a este correo.
+                                
+                        Saludos cordiales,
+                        Departamento de Registro y Control
+                        Universidad TE AYUDAMOS%s
+                        """,
                 estudiante.nombre(),
                 INSTITUCION_NOMBRE,
                 estudiante.nombre(),
@@ -104,28 +108,28 @@ public class EmailServices {
 
     private String construirMensajeActualizacion(EstudianteDto estudianteAntiguo, EstudianteDto estudianteNuevo) {
         return String.format("""
-                Estimado/a %s,
-                
-                Te informamos que tus datos han sido actualizados exitosamente en nuestro sistema académico.
-                
-                Datos anteriores:
-                - Nombre: %s
-                - ID: %s
-                - Correo: %s
-                - Teléfono: %s
-                
-                Datos actualizados:
-                - Nombre: %s
-                - ID: %s
-                - Correo: %s
-                - Teléfono: %s
-                
-                Si no reconoces estos cambios o detectas alguna inconsistencia, por favor contáctanos.
-                
-                Saludos cordiales,
-                Departamento de Registro y Control
-                Universidad TE AYUDAMOS%s
-                """,
+                        Estimado/a %s,
+                                        
+                        Te informamos que tus datos han sido actualizados exitosamente en nuestro sistema académico.
+                                        
+                        Datos anteriores:
+                        - Nombre: %s
+                        - ID: %s
+                        - Correo: %s
+                        - Teléfono: %s
+                                        
+                        Datos actualizados:
+                        - Nombre: %s
+                        - ID: %s
+                        - Correo: %s
+                        - Teléfono: %s
+                                        
+                        Si no reconoces estos cambios o detectas alguna inconsistencia, por favor contáctanos.
+                                        
+                        Saludos cordiales,
+                        Departamento de Registro y Control
+                        Universidad TE AYUDAMOS%s
+                        """,
                 estudianteNuevo.nombre(),
                 estudianteAntiguo.nombre(),
                 estudianteAntiguo.id(),
@@ -138,4 +142,39 @@ public class EmailServices {
                 FIRMA_OFICIAL
         );
     }
+
+    public void enviarMensajeInicioSesion(Persona usuario) {
+        String asunto = "Inicio de sesión exitoso - " + INSTITUCION_NOMBRE;
+        String mensaje = construirMensajeInicioSesion(usuario);
+
+        EmailUtil emailUtil = new EmailUtil(usuario.getCorreo(), asunto, mensaje);
+        emailUtil.sendNotification();
+    }
+
+
+
+    private String construirMensajeInicioSesion(Persona usuario) {
+        LocalDateTime horaActual = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE dd 'de' MMMM 'de' yyyy 'a las' HH:mm:ss");
+        String fechaHoraFormateada = horaActual.format(formatter);
+
+        return String.format("""
+                        Estimado/a %s:
+                        
+                        Bienvenido/a al Sistema de Gestión Estudiantil. Se ha registrado correctamente su inicio de sesión el %s.
+                        
+                        Recuerde que por su seguridad, es importante cerrar sesión al finalizar sus actividades en el sistema.
+                        
+                        Atentamente,
+                        Departamento de Registro y Control
+                        Universidad TE AYUDAMOS
+                        %s
+                        """,
+                usuario.getNombre(),
+                fechaHoraFormateada,
+                FIRMA_OFICIAL
+        );
+    }
+
+
 }
