@@ -50,10 +50,9 @@ public class Universidad implements Serializable {
         if (estudiante.getListaCursos() == null) {
             return new ArrayList<>();
         }
-        System.out.println("Cursos del estudiante: " + estudiante.getListaCursos().size());
-        return estudiante.getListaCursos();
+        // Crear una nueva lista para evitar referencias directas
+        return new ArrayList<>(estudiante.getListaCursos());
     }
-
 
     public void addEstudiante(Estudiante estudiante) throws EstudianteException {
         if (estudiante == null) {

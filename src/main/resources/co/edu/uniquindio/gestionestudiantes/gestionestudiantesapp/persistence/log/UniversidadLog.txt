@@ -104,3 +104,97 @@ ene 13, 2025 1:07:14 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudia
 INFO: login,Login,2025-01-13
 ene 13, 2025 1:08:20 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
 INFO: AsignarCurso,Curso CS104a 1098056781,2025-01-13
+ene 13, 2025 6:29:50 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 6:30:57 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS101a 1097039430,2025-01-13
+ene 13, 2025 6:42:16 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 6:42:54 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS104a 1097039430,2025-01-13
+ene 13, 2025 6:44:19 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 6:45:20 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS105a 1097039430,2025-01-13
+ene 13, 2025 8:26:31 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 8:27:36 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS103a 1097039430,2025-01-13
+ene 13, 2025 8:31:39 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 8:32:01 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS105a 1098056781,2025-01-13
+ene 13, 2025 8:36:36 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 8:36:54 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS104a 1097032932,2025-01-13
+ene 13, 2025 8:42:23 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 8:42:44 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS101a 1095023489,2025-01-13
+ene 13, 2025 8:43:29 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS104a 1095023489,2025-01-13
+ene 13, 2025 8:44:18 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 8:45:34 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 8:45:51 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS104a 1097032932,2025-01-13
+ene 13, 2025 8:50:04 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 8:50:19 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS105a 1097032932,2025-01-13
+ene 13, 2025 8:51:09 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 8:51:26 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS101a 1095023489,2025-01-13
+ene 13, 2025 8:53:10 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 8:54:10 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 8:54:52 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 8:55:10 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS104a 1095023489,2025-01-13
+ene 13, 2025 8:55:50 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 8:56:12 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS104a 1098056781,2025-01-13
+ene 13, 2025 9:01:53 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 9:02:14 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS105a 1098056781,2025-01-13
+ene 13, 2025 9:10:49 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 9:11:20 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS105a 1095023489,2025-01-13
+ene 13, 2025 9:13:22 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 9:13:39 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS101a 1095023489,2025-01-13
+ene 13, 2025 9:15:25 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 9:15:53 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS105a 1095023489,2025-01-13
+ene 13, 2025 9:18:20 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 9:18:33 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS104a 1095023489,2025-01-13
+ene 13, 2025 9:18:49 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS104a 1098056781,2025-01-13
+ene 13, 2025 9:30:19 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 9:30:37 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS105a 1098056781,2025-01-13
+ene 13, 2025 9:34:24 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 9:34:41 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS104a 1097032932,2025-01-13
+ene 13, 2025 9:36:26 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 9:36:42 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS105a 1097032932,2025-01-13
+ene 13, 2025 9:38:21 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-13
+ene 13, 2025 9:38:40 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS104a 1097032932,2025-01-13

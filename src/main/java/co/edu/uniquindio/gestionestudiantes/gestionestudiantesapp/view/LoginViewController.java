@@ -60,6 +60,8 @@ public class LoginViewController extends CoreViewController {
     @FXML
     void initialize() {
         loginController = new LoginController();
+        txtCorreo.setText("teayudamo3@gmail.com");
+        txtId.setText("25024333");
 
     }
 

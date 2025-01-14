@@ -77,8 +77,8 @@ public class AsignacionCursosViewController extends CoreViewController {
 
         if(validarDatosAsignacion(cursoDto)){
             if(gestionCursosController.asignarCursoEstudiante(estudianteSeleccionado.id(), cursoDto.codigo())) {
-                // Solo actualizamos la vista después de una asignación exitosa
-                actualizarCursosEstudiante();
+                listaCursosAsignadosDto.add(cursoDto);
+                tableCursosAsignados.refresh();
                 mostrarMensaje("Notificación", "Curso asignado",
                         "El curso ha sido asignado con éxito", Alert.AlertType.INFORMATION);
                 cbCursos.setValue(null);
@@ -137,6 +137,7 @@ public class AsignacionCursosViewController extends CoreViewController {
         getEstudiantes();
         tableEstudiantes.getItems().clear();
         tableEstudiantes.setItems(listaEstudiantesDto);
+        tableCursosAsignados.getItems().clear();
         tableCursosAsignados.setItems(listaCursosAsignadosDto);
         cargarCursosCombobox();
     }
@@ -163,14 +164,10 @@ public class AsignacionCursosViewController extends CoreViewController {
 
     private void actualizarCursosEstudiante() {
         if (estudianteSeleccionado != null) {
-            listaCursosAsignadosDto.clear();
-            // Asegurarnos de que estamos obteniendo la lista actualizada de cursos
-            List<CursoDto> cursosEstudiante = gestionCursosController.getCursosEstudiante(estudianteSeleccionado);
-            if (cursosEstudiante != null) {
-                listaCursosAsignadosDto.addAll(cursosEstudiante);
-            }
-            // Forzar actualización de la tabla
-            tableCursosAsignados.refresh();
+            List<CursoDto> cursosActualizados = gestionCursosController.getCursosEstudiante(estudianteSeleccionado);
+            ObservableList<CursoDto> nuevaLista = FXCollections.observableArrayList(cursosActualizados);
+            tableCursosAsignados.setItems(nuevaLista);
+            listaCursosAsignadosDto = nuevaLista;
         }
     }
 
@@ -185,6 +182,5 @@ public class AsignacionCursosViewController extends CoreViewController {
 
         initializeComboBox(cbCursos, listaCursosDto, cursoDto -> cursoDto.nombre());
     }
-
 
 }
