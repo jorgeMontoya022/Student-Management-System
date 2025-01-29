@@ -1,9 +1,6 @@
 package co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils;
 
-import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Admin;
-import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Curso;
-import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Estudiante;
-import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Universidad;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.*;
 
 import java.util.ArrayList;
 
@@ -31,6 +28,42 @@ public class UniversidadUtils {
                 "3005678912"
         );
 
+        Profesor profesor1 = new Profesor(
+                "Juan Diego Mayorca",
+                "1098788900",
+                "juandie1243@gmail.com",
+                "3145678900"
+        );
+
+        Profesor profesor2 = new Profesor(
+                "Carlos Alberto Ramírez",
+                "1098765432",
+                "carlos.ramirez@gmail.com",
+                "3101234567"
+        );
+
+        Profesor profesor3 = new Profesor(
+                "Marcela Fernanda Gómez",
+                "1002345678",
+                "marcela.gomez@gmail.com",
+                "3127654321"
+        );
+
+        Profesor profesor4 = new Profesor(
+                "Andrés Felipe Torres",
+                "1011121314",
+                "andres.torres@gmail.com",
+                "3156789012"
+        );
+
+        Profesor profesor5 = new Profesor(
+                "Luisa Fernanda Pérez",
+                "1020304050",
+                "luisa.perez@gmail.com",
+                "3209876543"
+        );
+
+
         Admin admin = new Admin(
                 "admin",
                 PersistenceUtil.ADMIN_ID,
@@ -40,31 +73,31 @@ public class UniversidadUtils {
         Curso curso1 = new Curso(
                 "Programación Orientada a Objetos",
                 "CS101",
-                "Juan Pérez"
+                profesor1
         );
 
         Curso curso2 = new Curso(
                 "Estructuras de Datos",
                 "CS102",
-                "María González"
+                profesor2
         );
 
         Curso curso3 = new Curso(
                 "Bases de Datos",
                 "CS103",
-                "Luis Ramírez"
+                profesor3
         );
 
         Curso curso4 = new Curso(
                 "Ingeniería de Software",
                 "CS104",
-                "Ana Mejía"
+                profesor4
         );
 
         Curso curso5 = new Curso(
                 "Redes de Computadores",
                 "CS105",
-                "Carlos Valencia"
+                profesor5
         );
 
         // Asignar estudiantes a cursos y cursos a estudiantes
@@ -88,7 +121,7 @@ public class UniversidadUtils {
         estudiante3.getListaCursos().add(curso3);
 
 
-        // Crear listas de estudiantes y cursos
+        // Crear listas de estudiantes, profesores y cursos
         ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
         listaEstudiantes.add(estudiante1);
         listaEstudiantes.add(estudiante2);
@@ -101,15 +134,20 @@ public class UniversidadUtils {
         listaCursos.add(curso4);
         listaCursos.add(curso5);
 
+        ArrayList<Profesor> listaProfesores = new ArrayList<>();
+        listaProfesores.add(profesor1);
+        listaProfesores.add(profesor2);
+        listaProfesores.add(profesor3);
+        listaProfesores.add(profesor4);
+        listaProfesores.add(profesor5);
+
         // Crear la universidad
         Universidad universidad = new Universidad();
         universidad.setListaEstudiantes(listaEstudiantes);
         universidad.setListaCursos(listaCursos);
+        universidad.setListaProfesores(listaProfesores);
         universidad.setAdmin(admin);
 
         return universidad;
     }
-
-
-
 }

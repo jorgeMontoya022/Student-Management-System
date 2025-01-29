@@ -28,6 +28,12 @@ public class AdminContainerViewController extends CoreViewController {
     private Button btnEstudiantes;
 
     @FXML
+    private Button btnProfesores;
+
+    @FXML
+    private AnchorPane profesoresView;
+
+    @FXML
     private AnchorPane cursosView;
 
     @FXML
@@ -41,10 +47,12 @@ public class AdminContainerViewController extends CoreViewController {
         asignacionView.setVisible(true);
         cursosView.setVisible(false);
         estudiantesView.setVisible(false);
+        profesoresView.setVisible(false);
 
         btnAsignacion.setStyle(BUTTON_ACTIVE);
         btnCursos.setStyle(BUTTON_INACTIVE);
         btnEstudiantes.setStyle(BUTTON_INACTIVE);
+        btnProfesores.setStyle(BUTTON_INACTIVE);
     }
 
     @FXML
@@ -52,10 +60,12 @@ public class AdminContainerViewController extends CoreViewController {
         cursosView.setVisible(true);
         estudiantesView.setVisible(false);
         asignacionView.setVisible(false);
+        profesoresView.setVisible(false);
 
         btnCursos.setStyle(BUTTON_ACTIVE);
         btnAsignacion.setStyle(BUTTON_INACTIVE);
         btnEstudiantes.setStyle(BUTTON_INACTIVE);
+        btnProfesores.setStyle(BUTTON_INACTIVE);
     }
 
     @FXML
@@ -63,10 +73,28 @@ public class AdminContainerViewController extends CoreViewController {
         estudiantesView.setVisible(true);
         cursosView.setVisible(false);
         asignacionView.setVisible(false);
+        profesoresView.setVisible(false);
 
         btnEstudiantes.setStyle(BUTTON_ACTIVE);
         btnCursos.setStyle(BUTTON_INACTIVE);
         btnAsignacion.setStyle(BUTTON_INACTIVE);
+        btnProfesores.setStyle(BUTTON_INACTIVE);
+    }
+
+
+    @FXML
+    void onNavigateToProfesores(ActionEvent event) {
+        profesoresView.setVisible(true);
+        cursosView.setVisible(false);
+        estudiantesView.setVisible(false);
+        asignacionView.setVisible(false);
+
+        btnProfesores.setStyle(BUTTON_ACTIVE);
+        btnCursos.setStyle(BUTTON_INACTIVE);
+        btnAsignacion.setStyle(BUTTON_INACTIVE);
+        btnEstudiantes.setStyle(BUTTON_ACTIVE);
+
+
     }
 
     @FXML
@@ -80,5 +108,6 @@ public class AdminContainerViewController extends CoreViewController {
         btnEstudiantes.setStyle(BUTTON_ACTIVE);
         btnCursos.setStyle(BUTTON_INACTIVE);
         btnAsignacion.setStyle(BUTTON_INACTIVE);
+        btnProfesores.setStyle(BUTTON_INACTIVE);
     }
 }

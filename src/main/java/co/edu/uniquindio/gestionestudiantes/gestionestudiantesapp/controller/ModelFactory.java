@@ -2,6 +2,7 @@ package co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.controller;
 
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.CursoDto;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.EstudianteDto;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.ProfesorDto;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.exceptions.EstudianteException;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.mapping.IGestionEstudiantesMapper;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Curso;
@@ -19,6 +20,8 @@ public class ModelFactory {
 
     Universidad universidad;
     IGestionEstudiantesMapper gestionEstudiantesMapper = IGestionEstudiantesMapper.INSTANCE;
+
+
 
 
     private static class SinglentonHolder {
@@ -181,9 +184,9 @@ public class ModelFactory {
         return universidad.tieneCursoAsignado(idEstudiante, codigoCurso);
     }
 
-
-
-
-
-
+    public List<ProfesorDto> getProfesores() {
+        List<ProfesorDto> listaProfesores = new ArrayList<>();
+        listaProfesores.addAll(gestionEstudiantesMapper.getListaProfesoresDto(universidad.getListaProfesores()));
+        return listaProfesores;
+    }
 }

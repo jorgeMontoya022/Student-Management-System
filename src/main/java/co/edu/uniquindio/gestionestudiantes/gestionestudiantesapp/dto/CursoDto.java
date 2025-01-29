@@ -5,7 +5,7 @@ import java.util.List;
 public record CursoDto(
         String nombre,
         String codigo,
-        String nombreProfesor,
+        ProfesorDto profesor,
         List<EstudianteDto> listaEstudiantes
 ) {
 }

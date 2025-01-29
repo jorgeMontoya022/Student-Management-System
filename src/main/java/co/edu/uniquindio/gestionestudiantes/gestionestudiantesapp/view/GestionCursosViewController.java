@@ -8,8 +8,11 @@ import java.util.ResourceBundle;
 
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.controller.GestionCursosController;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.CursoDto;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.ProfesorDto;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Admin;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.session.Sesion;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.observer.EventType;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.observer.ObserverManagement;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -50,6 +53,9 @@ public class GestionCursosViewController extends CoreViewController {
     private Button btnVerEstudiantes;
 
     @FXML
+    private ComboBox<ProfesorDto> cbProfesor;
+
+    @FXML
     private TableView<CursoDto> tableCursos;
 
     @FXML
@@ -70,8 +76,7 @@ public class GestionCursosViewController extends CoreViewController {
     @FXML
     private TextField txtNombreCurso;
 
-    @FXML
-    private TextField txtProfesor;
+
 
     @FXML
     void onActualizar(ActionEvent event) {
@@ -83,7 +88,6 @@ public class GestionCursosViewController extends CoreViewController {
         agregarCurso();
 
     }
-
 
     @FXML
     void onEliminar(ActionEvent event) {
@@ -97,14 +101,12 @@ public class GestionCursosViewController extends CoreViewController {
 
     }
 
-
     @FXML
     void onVerEstudiantes(ActionEvent event) {
         if (cursoSeleccionado != null) {
             openStudentsWindow(cursoSeleccionado);
         }
     }
-
 
     @FXML
     void initialize() {
@@ -119,22 +121,33 @@ public class GestionCursosViewController extends CoreViewController {
     private void initView() {
         initDataBinding();
         getCursos();
+        initializeDataComboBox();
         tableCursos.getItems().clear();
         tableCursos.setItems(listaCursosDto);
         listenerSelection();
     }
 
 
+
+
     private void initDataBinding() {
         tcNombreCurso.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombre()));
         tcCodigo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().codigo()));
-        tcProfesor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombreProfesor()));
+        tcProfesor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().profesor().nombre()));
 
     }
 
     private void getCursos() {
         listaCursosDto.clear();
         listaCursosDto.addAll(gestionCursosController.getCursos());
+    }
+
+    private void initializeDataComboBox() {
+        ObservableList<ProfesorDto> listaProfesoresDto = FXCollections.observableArrayList(gestionCursosController.getProfesores());
+        cbProfesor.setItems(listaProfesoresDto);
+
+        initializeComboBox(cbProfesor, listaProfesoresDto, profesorDto -> profesorDto.nombre());
+
     }
 
     private void setupFilter() {
@@ -191,12 +204,19 @@ public class GestionCursosViewController extends CoreViewController {
         if (cursoSeleccionado != null) {
             txtNombreCurso.setText(cursoSeleccionado.nombre());
             txtCodigo.setText(cursoSeleccionado.codigo());
-            txtProfesor.setText(cursoSeleccionado.nombreProfesor());
+
+            cbProfesor.getSelectionModel().select(
+                    cbProfesor.getItems().stream()
+                            .filter(profesor -> profesor.nombre().equals(cursoSeleccionado.profesor().nombre()))
+                            .findFirst()
+                            .orElse(null)
+
+            );
         }
     }
 
     private void clearFields() {
-        txtProfesor.clear();
+        cbProfesor.getSelectionModel().clearSelection();
         txtCodigo.clear();
         txtNombreCurso.clear();
         txtFiltrar.clear();
@@ -217,6 +237,7 @@ public class GestionCursosViewController extends CoreViewController {
             if (gestionCursosController.agregarCursos(cursoDto)) {
                 listaCursosDto.add(cursoDto);
                 mostrarMensaje("Notificación", "Curso agregado exitosamente", "El curso ha sido registrado correctamente en el sistema. Ahora puede proceder a asignar estudiantes, configurar horarios o realizar cualquier gestión adicional relacionada con este curso.", Alert.AlertType.INFORMATION);
+                ObserverManagement.getInstance().notifyObservers(EventType.CURSO);
                 clearFields();
             }
         } else {
@@ -232,8 +253,8 @@ public class GestionCursosViewController extends CoreViewController {
         if (cursoDto.codigo().isEmpty()) {
             mensaje += "El código del curso es requerido.\n";
         }
-        if (cursoDto.nombreProfesor().isEmpty()) {
-            mensaje += "El nombre del profesor es requerido.\n";
+        if (cursoDto.profesor() == null) {
+            mensaje += "El profesor es requerido.\n";
         }
         if (!mensaje.isEmpty()) {
             mostrarMensaje("Notificación de validación", "Datos no validos", mensaje, Alert.AlertType.WARNING);
@@ -246,8 +267,8 @@ public class GestionCursosViewController extends CoreViewController {
     private CursoDto buildCursoDto() {
         String nombre = txtNombreCurso.getText().trim();
         String codigo = txtCodigo.getText().trim();
-        String nombreProfesor = txtProfesor.getText().trim();
-        return new CursoDto(nombre, codigo, nombreProfesor, new ArrayList<>());
+        ProfesorDto profesor = cbProfesor.getValue();
 
+        return new CursoDto(nombre, codigo, profesor, new ArrayList<>());
     }
 }

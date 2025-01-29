@@ -343,20 +343,15 @@
     </object>
    </void>
    <void method="add">
-    <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Estudiante" id="Estudiante4">
+    <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Estudiante">
      <void property="correo">
       <string>jorgetoro708@gmail.com</string>
      </void>
      <void property="id">
       <string>123456789</string>
      </void>
-     <void property="listaCursos">
-      <void method="add">
-       <object idref="Curso0"/>
-      </void>
-     </void>
      <void property="nombre">
-      <string>David Carabalí Montoya</string>
+      <string>David Carabalí</string>
      </void>
      <void property="telefono">
       <string>3218941022</string>

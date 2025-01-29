@@ -4,6 +4,9 @@ import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.controller.Ges
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.CursoDto;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.EstudianteDto;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.services.PdfExportService;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.observer.EventType;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.observer.ObserverManagement;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.observer.ObserverView;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,7 +21,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-public class CursosEstudianteViewController {
+public class CursosEstudianteViewController implements ObserverView {
 
     @FXML
     private Button btnExportarLista;
@@ -108,6 +111,7 @@ public class CursosEstudianteViewController {
     public void initialize() {
         gestionEstudianteController = new GestionEstudianteController();
         initView();
+        ObserverManagement.getInstance().addObserver(EventType.CURSO, this);
         setupFilter();
         labelPeriodoAcadémico.setText("Periodo Académico: " + obtenerPeriodoAcadémico());
 
@@ -120,7 +124,6 @@ public class CursosEstudianteViewController {
 
 
     }
-
 
     private String obtenerPeriodoAcadémico() {
         LocalDate fechaActual = LocalDate.now();
@@ -148,13 +151,10 @@ public class CursosEstudianteViewController {
         });
     }
 
-
-
-
     private void initDataBinding() {
         tcCursoNombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombre()));
         tcCodigo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().codigo()));
-        tcProfesor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombreProfesor()));
+        tcProfesor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().profesor().nombre()));
     }
 
     public void setEstudiante(EstudianteDto estudiante) {
@@ -206,5 +206,18 @@ public class CursosEstudianteViewController {
             default:
                 return false;
         }
+    }
+
+    @Override
+    public void updateView(EventType event) {
+        switch (event) {
+            case CURSO:
+                cargarCursosEstudiante(estudianteSeleccionado);
+                break;
+            default:
+                break;
+
+        }
+
     }
 }

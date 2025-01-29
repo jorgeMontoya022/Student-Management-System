@@ -14,9 +14,12 @@ public class Universidad implements Serializable {
     private List<Estudiante> listaEstudiantes;
     private List<Curso> listaCursos;
 
+    private List<Profesor> listaProfesores;
+
     public Universidad() {
         this.listaCursos = new ArrayList<>();
         this.listaEstudiantes = new ArrayList<>();
+        this.listaProfesores = new ArrayList<>();
     }
 
     public List<Estudiante> getListaEstudiantes() {
@@ -41,6 +44,14 @@ public class Universidad implements Serializable {
 
     public void setAdmin(Admin admin) {
         this.admin = admin;
+    }
+
+    public List<Profesor> getListaProfesores() {
+        return listaProfesores;
+    }
+
+    public void setListaProfesores(List<Profesor> listaProfesores) {
+        this.listaProfesores = listaProfesores;
     }
 
     public List<Curso> getCursosEstudiante(Estudiante estudiante) {

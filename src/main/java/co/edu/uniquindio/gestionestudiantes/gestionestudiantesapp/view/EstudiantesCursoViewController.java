@@ -9,13 +9,16 @@ import java.util.ResourceBundle;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.controller.GestionCursosController;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.CursoDto;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.EstudianteDto;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.observer.EventType;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.observer.ObserverManagement;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.observer.ObserverView;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-public class EstudiantesCursoViewController {
+public class EstudiantesCursoViewController implements ObserverView {
 
     @FXML
     private ResourceBundle resources;
@@ -66,6 +69,7 @@ public class EstudiantesCursoViewController {
     void initialize() {
         gestionCursosController = new GestionCursosController();
         setupFilter();
+        ObserverManagement.getInstance().addObserver(EventType.CURSO, this);
         labelPeriodoAcadémico.setText("Periodo Académico: " + obtenerPeriodoAcadémico());
         initDataBinding(); // Podemos mantener esto aquí ya que no depende del curso
     }
@@ -156,5 +160,17 @@ public class EstudiantesCursoViewController {
         LocalDateTime ahora = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         labelUltimaActualizacion.setText("Última actualización: " + ahora.format(formatter));
+    }
+
+    @Override
+    public void updateView(EventType event) {
+        switch (event){
+            case CURSO:
+                cargarEstudiantesCurso(cursoSeleccionado);
+                break;
+            default:
+                break;
+        }
+
     }
 }

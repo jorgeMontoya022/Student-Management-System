@@ -8,7 +8,7 @@ public class Curso implements Serializable {
     private static final long serialVersionUID = 1L;
     private String nombre;
     private String codigo;
-    private String nombreProfesor;
+    private Profesor profesor;
     private List<Estudiante> listaEstudiantes;
 
     // Constructor por defecto necesario para XMLEncoder
@@ -16,10 +16,10 @@ public class Curso implements Serializable {
         this.listaEstudiantes = new ArrayList<>();
     }
 
-    public Curso(String nombre, String codigo, String nombreProfesor) {
+    public Curso(String nombre, String codigo, Profesor profesor) {
         this.nombre = nombre;
         this.codigo = codigo;
-        this.nombreProfesor = nombreProfesor;
+        this.profesor = profesor;
         this.listaEstudiantes = new ArrayList<>();
     }
 
@@ -39,12 +39,12 @@ public class Curso implements Serializable {
         this.codigo = codigo;
     }
 
-    public String getNombreProfesor() {
-        return nombreProfesor;
+    public Profesor getProfesor() {
+        return profesor;
     }
 
-    public void setNombreProfesor(String nombreProfesor) {
-        this.nombreProfesor = nombreProfesor;
+    public void setProfesor(Profesor profesor) {
+        this.profesor = profesor;
     }
 
     public List<Estudiante> getListaEstudiantes() {

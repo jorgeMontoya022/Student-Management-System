@@ -37,6 +37,15 @@
         </VBox.margin>
       </Button>
 
+      <Button fx:id="btnProfesores" onAction="#onNavigateToProfesores" prefWidth="250.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 15 20;" text="Gestión de Profesores">
+        <font>
+          <Font size="14.0"/>
+        </font>
+        <VBox.margin>
+          <Insets bottom="5.0"/>
+        </VBox.margin>
+      </Button>
+
       <Button fx:id="btnCursos" onAction="#onNavigateToCursos" prefWidth="250.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 15 20;" text="Gestión de Cursos">
         <font>
           <Font size="14.0" />
@@ -51,6 +60,8 @@
           <Font size="14.0" />
         </font>
       </Button>
+
+
 
       <!-- Espaciador para empujar el botón de inicio hacia abajo -->
       <Region VBox.vgrow="ALWAYS" />
@@ -85,6 +96,12 @@
         <AnchorPane fx:id="asignacionView" visible="false">
           <children>
             <fx:include source="asignacion-cursos-view.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+          </children>
+        </AnchorPane>
+
+        <AnchorPane fx:id="profesoresView" visible="false">
+          <children>
+            <fx:include source="gestion-profesores-view.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
           </children>
         </AnchorPane>
       </children>

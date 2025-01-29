@@ -1,6 +1,7 @@
 package co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -9,6 +10,9 @@ import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.CursoDto;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.EstudianteDto;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Admin;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.session.Sesion;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.observer.EventType;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.observer.ObserverManagement;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.observer.ObserverView;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,7 +20,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-public class AsignacionCursosViewController extends CoreViewController {
+public class AsignacionCursosViewController extends CoreViewController implements ObserverView {
 
     Admin loggedAdmin;
     ObservableList<EstudianteDto> listaEstudiantesDto = FXCollections.observableArrayList();
@@ -78,9 +82,9 @@ public class AsignacionCursosViewController extends CoreViewController {
         if(validarDatosAsignacion(cursoDto)){
             if(gestionCursosController.asignarCursoEstudiante(estudianteSeleccionado.id(), cursoDto.codigo())) {
                 listaCursosAsignadosDto.add(cursoDto);
-                tableCursosAsignados.refresh();
                 mostrarMensaje("Notificación", "Curso asignado",
                         "El curso ha sido asignado con éxito", Alert.AlertType.INFORMATION);
+                ObserverManagement.getInstance().notifyObservers(EventType.CURSO);
                 cbCursos.setValue(null);
             } else {
                 mostrarMensaje("Error", "Curso no asignado",
@@ -128,8 +132,12 @@ public class AsignacionCursosViewController extends CoreViewController {
         gestionCursosController = new GestionCursosController();
         loggedAdmin = (Admin) Sesion.getInstance().getPersona();
         initView();
+        ObserverManagement.getInstance().addObserver(EventType.CURSO, this);
+        ObserverManagement.getInstance().addObserver(EventType.ESTUDIANTE, this);
+        setupFilter();
 
     }
+
 
     private void initView() {
         initDataBinding();
@@ -148,7 +156,7 @@ public class AsignacionCursosViewController extends CoreViewController {
         tcDocumento.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().id()));
         tcCurso.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombre()));
         tcCodigo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().codigo()));
-        tcProfesor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombreProfesor()));
+        tcProfesor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().profesor().nombre()));
 
     }
 
@@ -164,13 +172,14 @@ public class AsignacionCursosViewController extends CoreViewController {
 
     private void actualizarCursosEstudiante() {
         if (estudianteSeleccionado != null) {
+            // Aquí obtenemos los cursos actualizados para el estudiante
             List<CursoDto> cursosActualizados = gestionCursosController.getCursosEstudiante(estudianteSeleccionado);
-            ObservableList<CursoDto> nuevaLista = FXCollections.observableArrayList(cursosActualizados);
-            tableCursosAsignados.setItems(nuevaLista);
-            listaCursosAsignadosDto = nuevaLista;
+            // Limpiamos la lista de cursos asignados
+            listaCursosAsignadosDto.setAll(cursosActualizados);
+            tableCursosAsignados.setItems(listaCursosAsignadosDto);
+            tableCursosAsignados.refresh(); // Refrescamos la tabla
         }
     }
-
     private void getEstudiantes() {
         listaEstudiantesDto.clear();
         listaEstudiantesDto.addAll(gestionCursosController.getEstudiantes());
@@ -183,4 +192,41 @@ public class AsignacionCursosViewController extends CoreViewController {
         initializeComboBox(cbCursos, listaCursosDto, cursoDto -> cursoDto.nombre());
     }
 
+    private void setupFilter() {
+        txtBuscarEstudiante.textProperty().addListener((observable, oldValue, newValue) -> {
+            List<EstudianteDto> originalList = gestionCursosController.getEstudiantes();
+            ObservableList<EstudianteDto> filteredList = filtrarLista(originalList, newValue);
+            tableEstudiantes.setItems(filteredList);
+        });
+    }
+
+    private ObservableList<EstudianteDto> filtrarLista(List<EstudianteDto> originalList, String searchText) {
+        List<EstudianteDto> filteredList = new ArrayList<>();
+        for (EstudianteDto estudianteDto: originalList) {
+            if (buscarEstudiante(estudianteDto, searchText)) filteredList.add(estudianteDto);
+        }
+        return FXCollections.observableList(filteredList);
+    }
+
+    private boolean buscarEstudiante(EstudianteDto estudianteDto, String searchText) {
+        return (estudianteDto.id().toLowerCase().contains(searchText.toLowerCase())) ||
+                estudianteDto.nombre().toLowerCase().contains(searchText.toLowerCase());
+    }
+
+    @Override
+    public void updateView(EventType event) {
+        switch (event) {
+            case ESTUDIANTE:
+                getEstudiantes();
+                tableEstudiantes.refresh();
+                break;
+            case CURSO:
+                cargarCursosCombobox();
+                actualizarCursosEstudiante();
+                tableCursosAsignados.refresh();
+                break;
+            default:
+                break;
+        }
+    }
 }

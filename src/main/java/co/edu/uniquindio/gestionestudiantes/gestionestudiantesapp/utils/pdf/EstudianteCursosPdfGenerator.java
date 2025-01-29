@@ -149,7 +149,7 @@ public class EstudianteCursosPdfGenerator {
         for (CursoDto curso : cursos) {
             agregarCeldaTabla(table, curso.codigo(), alternarColor);
             agregarCeldaTabla(table, curso.nombre(), alternarColor);
-            agregarCeldaTabla(table, curso.nombreProfesor(), alternarColor);
+            agregarCeldaTabla(table, curso.profesor().nombre(), alternarColor);
             alternarColor = !alternarColor;
         }
     }

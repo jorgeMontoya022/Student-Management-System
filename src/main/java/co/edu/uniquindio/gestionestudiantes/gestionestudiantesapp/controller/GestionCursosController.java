@@ -2,6 +2,7 @@ package co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.controller;
 
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.CursoDto;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.EstudianteDto;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.ProfesorDto;
 
 import java.util.List;
 
@@ -36,5 +37,9 @@ public class GestionCursosController extends CoreController {
 
     public boolean tieneCursoAsignado(String idEstudiante, String codigoCurso) {
         return modelFactory.tieneCursoAsignado(idEstudiante, codigoCurso);
+    }
+
+    public List<ProfesorDto> getProfesores() {
+        return modelFactory.getProfesores();
     }
 }

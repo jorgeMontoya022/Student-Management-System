@@ -9,6 +9,8 @@ public abstract class Persona implements Serializable {
     private String telefono;
     private static final long serialVersionUID = 1L;
 
+    public Persona(){}
+
     public Persona(String nombre, String id, String correo, String telefono) {
         this.nombre = nombre;
         this.id = id;

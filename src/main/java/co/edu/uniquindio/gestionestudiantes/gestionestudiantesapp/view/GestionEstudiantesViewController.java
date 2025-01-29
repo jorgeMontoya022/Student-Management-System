@@ -13,6 +13,9 @@ import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.dto.Estudiante
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Admin;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.services.EmailServices;
 import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.session.Sesion;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.observer.EventType;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.observer.ObserverManagement;
+import co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.view.observer.ObserverView;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,7 +27,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class GestionEstudiantesViewController extends CoreViewController {
+public class GestionEstudiantesViewController extends CoreViewController implements ObserverView {
 
     private final EmailServices emailService = new EmailServices();
 
@@ -125,6 +128,7 @@ public class GestionEstudiantesViewController extends CoreViewController {
         gestionEstudianteController = new GestionEstudianteController();
         loggedAdmin = (Admin) Sesion.getInstance().getPersona();
         initView();
+        ObserverManagement.getInstance().addObserver(EventType.CURSO, this);
         setupFilter();
     }
 
@@ -234,6 +238,7 @@ public class GestionEstudiantesViewController extends CoreViewController {
                 listaEstudiantesDto.add(estudianteDto);
                 notificarEstudianteAgregado(estudianteDto);
                 mostrarMensaje("Notificación", "Estudiante agregado", "El registro del estudiante se ha completado exitosamente. Todos los datos han sido almacenados de forma segura en el sistema.", Alert.AlertType.INFORMATION);
+                ObserverManagement.getInstance().notifyObservers(EventType.ESTUDIANTE);
                 clearFields();
             } else {
                 mostrarMensaje("Error", "Estudiante no agregado", "El estudiante no pudo ser agregado", Alert.AlertType.ERROR);
@@ -266,6 +271,7 @@ public class GestionEstudiantesViewController extends CoreViewController {
                         mostrarMensaje("Notificación", "Estudiante eliminado",
                                 "El estudiante ha sido eliminado con éxito y se le ha notificado por correo",
                                 Alert.AlertType.INFORMATION);
+                        ObserverManagement.getInstance().notifyObservers(EventType.ESTUDIANTE);
                     } catch (Exception e) {
                         listaEstudiantesDto.remove(estudianteSeleccionado);
                         mostrarMensaje("Advertencia", "Estudiante eliminado",
@@ -307,6 +313,7 @@ public class GestionEstudiantesViewController extends CoreViewController {
                     emailService.enviarCorreoActualizacion(estudianteSeleccionado, estudianteDto);
                     mostrarMensaje("Notificación", "Estudiante actualizado",
                             "El Estudiante ha sido actualizado con éxito", Alert.AlertType.INFORMATION);
+                    ObserverManagement.getInstance().notifyObservers(EventType.ESTUDIANTE);
                     deselectTable();
                     clearFields();
 
@@ -385,4 +392,15 @@ public class GestionEstudiantesViewController extends CoreViewController {
         return new EstudianteDto(nombre, id, correo, celular, new ArrayList<>());
     }
 
+    @Override
+    public void updateView(EventType event) {
+        switch (event) {
+            case CURSO:
+                getEstudiantes();
+                break;
+            default:
+                break;
+        }
+
+    }
 }
