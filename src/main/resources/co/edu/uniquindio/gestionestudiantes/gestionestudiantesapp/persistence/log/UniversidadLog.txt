@@ -44,3 +44,51 @@ ene 29, 2025 12:59:03 A. M. co.edu.uniquindio.gestionestudiantes.gestionestudi
 INFO: login,Login,2025-01-29
 ene 29, 2025 12:59:19 A. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
 INFO: AsignarCurso,Curso CS101a 123456789,2025-01-29
+ene 29, 2025 5:58:16 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-29
+ene 29, 2025 6:07:24 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-29
+ene 29, 2025 6:07:42 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS106a 123456789,2025-01-29
+ene 29, 2025 6:10:53 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-29
+ene 29, 2025 6:11:18 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS105a 123456789,2025-01-29
+ene 29, 2025 6:15:59 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-29
+ene 29, 2025 6:16:21 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS105a 1097032932,2025-01-29
+ene 29, 2025 6:23:02 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-29
+ene 29, 2025 6:23:25 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS105a 1095023489,2025-01-29
+ene 29, 2025 6:30:12 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-29
+ene 29, 2025 6:30:44 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS104a 1098056781,2025-01-29
+ene 29, 2025 6:36:42 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-01-29
+ene 29, 2025 6:36:54 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS105a 1098056781,2025-01-29
+feb 03, 2025 6:44:28 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-02-03
+feb 03, 2025 6:45:06 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS104a 1097032932,2025-02-03
+feb 03, 2025 6:53:51 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-02-03
+feb 03, 2025 6:54:10 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: AsignarCurso,Curso CS104a 1095023489,2025-02-03
+feb 05, 2025 1:07:26 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-02-05
+feb 05, 2025 1:11:02 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: agregarEstudiante,Estudiante agregado: 35514921,2025-02-05
+feb 05, 2025 1:12:38 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: removeUser,Usuario eliminado: 35514921,2025-02-05
+feb 05, 2025 1:13:57 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-02-05
+feb 05, 2025 1:14:52 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: agregarEstudiante,Estudiante agregado: 1097032890,2025-02-05
+feb 05, 2025 1:41:32 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-02-05
+feb 05, 2025 1:42:57 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-02-05

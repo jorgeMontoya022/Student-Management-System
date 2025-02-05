@@ -28,7 +28,9 @@ public class GestionCursosController extends CoreController {
     }
 
     public List<CursoDto> getCursosEstudiante(EstudianteDto estudianteSeleccionado) {
-        return modelFactory.getCursosEstudiante(estudianteSeleccionado);
+        List<CursoDto> cursos = modelFactory.getCursosEstudiante(estudianteSeleccionado);
+        System.out.println("Cursos obtenidos para el estudiante: " + cursos); // Depuración
+        return cursos;
     }
 
     public boolean asignarCursoEstudiante(String idEstudiante, String codigoCurso) {

@@ -180,9 +180,21 @@ public class Universidad implements Serializable {
             }
         }
 
-        // Si llegamos aquí, el curso no está asignado, así que lo agregamos
+        // Evitar NullPointerException asegurando que las listas estén inicializadas
+        if (estudiante.getListaCursos() == null) {
+            estudiante.setListaCursos(new ArrayList<>());
+        }
+        if (curso.getListaEstudiantes() == null) {
+            curso.setListaEstudiantes(new ArrayList<>());
+        }
+
+        // Asignar el curso al estudiante y viceversa
         estudiante.getListaCursos().add(curso);
+        curso.getListaEstudiantes().add(estudiante);
+
         return true;
+
+
     }
 
     private Curso verificarCursoExisteCodigo(String codigoCurso) {

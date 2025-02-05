@@ -236,10 +236,10 @@ public class GestionEstudiantesViewController extends CoreViewController impleme
         if (validarDatos(estudianteDto)) {
             if (gestionEstudianteController.agregarEstudiante(estudianteDto)) {
                 listaEstudiantesDto.add(estudianteDto);
-                notificarEstudianteAgregado(estudianteDto);
                 mostrarMensaje("Notificación", "Estudiante agregado", "El registro del estudiante se ha completado exitosamente. Todos los datos han sido almacenados de forma segura en el sistema.", Alert.AlertType.INFORMATION);
-                ObserverManagement.getInstance().notifyObservers(EventType.ESTUDIANTE);
                 clearFields();
+                ObserverManagement.getInstance().notifyObservers(EventType.ESTUDIANTE);
+                notificarEstudianteAgregado(estudianteDto);
             } else {
                 mostrarMensaje("Error", "Estudiante no agregado", "El estudiante no pudo ser agregado", Alert.AlertType.ERROR);
             }

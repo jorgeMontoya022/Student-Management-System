@@ -86,6 +86,17 @@
                        <void property="codigo">
                         <string>CS104</string>
                        </void>
+                       <void property="listaEstudiantes">
+                        <void method="add">
+                         <object idref="Estudiante2"/>
+                        </void>
+                        <void method="add">
+                         <object idref="Estudiante0"/>
+                        </void>
+                        <void method="add">
+                         <object idref="Estudiante1"/>
+                        </void>
+                       </void>
                        <void property="nombre">
                         <string>Ingeniería de Software</string>
                        </void>
@@ -111,6 +122,17 @@
                       <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Curso" id="Curso4">
                        <void property="codigo">
                         <string>CS105</string>
+                       </void>
+                       <void property="listaEstudiantes">
+                        <void method="add">
+                         <object idref="Estudiante0"/>
+                        </void>
+                        <void method="add">
+                         <object idref="Estudiante1"/>
+                        </void>
+                        <void method="add">
+                         <object idref="Estudiante2"/>
+                        </void>
                        </void>
                        <void property="nombre">
                         <string>Redes de Computadores</string>
@@ -168,7 +190,7 @@
                 <object idref="Curso1"/>
                </void>
                <void method="add">
-                <object idref="Curso0"/>
+                <object idref="Curso4"/>
                </void>
                <void method="add">
                 <object idref="Curso3"/>
@@ -212,6 +234,9 @@
          </void>
          <void method="add">
           <object idref="Curso2"/>
+         </void>
+         <void method="add">
+          <object idref="Curso4"/>
          </void>
          <void method="add">
           <object idref="Curso3"/>
@@ -262,32 +287,6 @@
    <void method="add">
     <object idref="Curso4"/>
    </void>
-   <void method="add">
-    <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Curso" id="Curso5">
-     <void property="codigo">
-      <string>CS106</string>
-     </void>
-     <void property="nombre">
-      <string>Matemáticas</string>
-     </void>
-     <void property="profesor">
-      <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Profesor">
-       <void property="correo">
-        <string>marcela.gomez@gmail.com</string>
-       </void>
-       <void property="id">
-        <string>1002345678</string>
-       </void>
-       <void property="nombre">
-        <string>Marcela Fernanda Gómez</string>
-       </void>
-       <void property="telefono">
-        <string>3127654321</string>
-       </void>
-      </object>
-     </void>
-    </object>
-   </void>
   </void>
   <void property="listaEstudiantes">
    <void method="add">
@@ -300,45 +299,18 @@
     <object idref="Estudiante2"/>
    </void>
    <void method="add">
-    <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Estudiante" id="Estudiante3">
+    <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Estudiante">
      <void property="correo">
       <string>jorgew.montoyat@uqvirtual.edu.co</string>
      </void>
      <void property="id">
-      <string>1078900398</string>
-     </void>
-     <void property="listaCursos">
-      <void method="add">
-       <object idref="Curso0"/>
-      </void>
-      <void method="add">
-       <object idref="Curso2"/>
-      </void>
-      <void method="add">
-       <object idref="Curso5"/>
-      </void>
+      <string>1097032890</string>
      </void>
      <void property="nombre">
-      <string>Juan José Molina</string>
+      <string>Juan Andrés montoya</string>
      </void>
      <void property="telefono">
       <string>3218941022</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Estudiante">
-     <void property="correo">
-      <string>jorgetoro708@gmail.com</string>
-     </void>
-     <void property="id">
-      <string>1098032967</string>
-     </void>
-     <void property="nombre">
-      <string>Cesar Montoya</string>
-     </void>
-     <void property="telefono">
-      <string>3145708960</string>
      </void>
     </object>
    </void>

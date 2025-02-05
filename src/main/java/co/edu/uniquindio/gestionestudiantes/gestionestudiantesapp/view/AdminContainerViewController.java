@@ -92,7 +92,7 @@ public class AdminContainerViewController extends CoreViewController {
         btnProfesores.setStyle(BUTTON_ACTIVE);
         btnCursos.setStyle(BUTTON_INACTIVE);
         btnAsignacion.setStyle(BUTTON_INACTIVE);
-        btnEstudiantes.setStyle(BUTTON_ACTIVE);
+        btnEstudiantes.setStyle(BUTTON_INACTIVE);
 
 
     }

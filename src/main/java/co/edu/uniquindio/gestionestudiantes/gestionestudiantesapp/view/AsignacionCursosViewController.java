@@ -81,11 +81,13 @@ public class AsignacionCursosViewController extends CoreViewController implement
 
         if(validarDatosAsignacion(cursoDto)){
             if(gestionCursosController.asignarCursoEstudiante(estudianteSeleccionado.id(), cursoDto.codigo())) {
-                listaCursosAsignadosDto.add(cursoDto);
                 mostrarMensaje("Notificación", "Curso asignado",
                         "El curso ha sido asignado con éxito", Alert.AlertType.INFORMATION);
                 ObserverManagement.getInstance().notifyObservers(EventType.CURSO);
                 cbCursos.setValue(null);
+
+                // Actualizar la lista de cursos asignados desde el controlador
+                actualizarCursosEstudiante();
             } else {
                 mostrarMensaje("Error", "Curso no asignado",
                         "El curso no pudo ser asignado", Alert.AlertType.ERROR);
@@ -131,9 +133,9 @@ public class AsignacionCursosViewController extends CoreViewController implement
     void initialize() {
         gestionCursosController = new GestionCursosController();
         loggedAdmin = (Admin) Sesion.getInstance().getPersona();
-        initView();
         ObserverManagement.getInstance().addObserver(EventType.CURSO, this);
         ObserverManagement.getInstance().addObserver(EventType.ESTUDIANTE, this);
+        initView();
         setupFilter();
 
     }
@@ -172,12 +174,10 @@ public class AsignacionCursosViewController extends CoreViewController implement
 
     private void actualizarCursosEstudiante() {
         if (estudianteSeleccionado != null) {
-            // Aquí obtenemos los cursos actualizados para el estudiante
-            List<CursoDto> cursosActualizados = gestionCursosController.getCursosEstudiante(estudianteSeleccionado);
-            // Limpiamos la lista de cursos asignados
-            listaCursosAsignadosDto.setAll(cursosActualizados);
-            tableCursosAsignados.setItems(listaCursosAsignadosDto);
-            tableCursosAsignados.refresh(); // Refrescamos la tabla
+            ObservableList<CursoDto> cursosActualizados = FXCollections.observableArrayList(gestionCursosController.getCursosEstudiante(estudianteSeleccionado));
+            System.out.println("Cursos actualizados: " + cursosActualizados); // Depuración
+            listaCursosAsignadosDto.addAll(cursosActualizados);
+            tableCursosAsignados.refresh();
         }
     }
     private void getEstudiantes() {

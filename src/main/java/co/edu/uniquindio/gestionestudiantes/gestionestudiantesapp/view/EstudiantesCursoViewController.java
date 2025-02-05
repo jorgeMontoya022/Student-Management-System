@@ -68,16 +68,18 @@ public class EstudiantesCursoViewController implements ObserverView {
     @FXML
     void initialize() {
         gestionCursosController = new GestionCursosController();
-        setupFilter();
         ObserverManagement.getInstance().addObserver(EventType.CURSO, this);
+        setupFilter();
         labelPeriodoAcadémico.setText("Periodo Académico: " + obtenerPeriodoAcadémico());
-        initDataBinding(); // Podemos mantener esto aquí ya que no depende del curso
+        initDataBinding(); // Solo inicializar el binding de columnas
     }
 
     public void setCurso(CursoDto curso) {
         this.cursoSeleccionado = curso;
-        labelCurso.setText(cursoSeleccionado.nombre().toUpperCase());
-        cargarEstudiantesCurso(cursoSeleccionado); // Ahora tenemos la garantía de que curso no es null
+        if (curso != null) {
+            labelCurso.setText(cursoSeleccionado.nombre().toUpperCase());
+            cargarEstudiantesCurso(cursoSeleccionado);
+        }
     }
 
     private String obtenerPeriodoAcadémico() {
@@ -146,6 +148,9 @@ public class EstudiantesCursoViewController implements ObserverView {
 
 
     private void cargarEstudiantesCurso(CursoDto cursoSeleccionado) {
+        if (cursoSeleccionado == null) {
+            return;
+        }
         listaEstudiantesDto.clear();
         listaOriginal.clear();
         listaEstudiantesDto.addAll(gestionCursosController.getEstudiantesCurso(cursoSeleccionado));
@@ -153,7 +158,6 @@ public class EstudiantesCursoViewController implements ObserverView {
         tableEstudiantes.setItems(listaEstudiantesDto);
         labelTotalEstudiantes.setText("Total estudiantes: " + String.valueOf(listaOriginal.size()));
         actualizarFechaActualizacion();
-
     }
 
     private void actualizarFechaActualizacion() {
@@ -167,6 +171,7 @@ public class EstudiantesCursoViewController implements ObserverView {
         switch (event){
             case CURSO:
                 cargarEstudiantesCurso(cursoSeleccionado);
+                tableEstudiantes.refresh();
                 break;
             default:
                 break;
