@@ -176,7 +176,7 @@ public class AsignacionCursosViewController extends CoreViewController implement
         if (estudianteSeleccionado != null) {
             ObservableList<CursoDto> cursosActualizados = FXCollections.observableArrayList(gestionCursosController.getCursosEstudiante(estudianteSeleccionado));
             System.out.println("Cursos actualizados: " + cursosActualizados); // Depuración
-            listaCursosAsignadosDto.addAll(cursosActualizados);
+            listaCursosAsignadosDto.setAll(cursosActualizados);
             tableCursosAsignados.refresh();
         }
     }

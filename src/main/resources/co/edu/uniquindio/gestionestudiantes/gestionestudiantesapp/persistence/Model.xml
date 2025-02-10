@@ -314,6 +314,22 @@
      </void>
     </object>
    </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Estudiante">
+     <void property="correo">
+      <string>jorgetoro708@gmail.com</string>
+     </void>
+     <void property="id">
+      <string>1098766544</string>
+     </void>
+     <void property="nombre">
+      <string>Cesar Guayu Toro</string>
+     </void>
+     <void property="telefono">
+      <string>3128185449</string>
+     </void>
+    </object>
+   </void>
   </void>
   <void property="listaProfesores">
    <void method="add">

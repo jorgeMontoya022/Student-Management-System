@@ -298,6 +298,22 @@
    <void method="add">
     <object idref="Estudiante2"/>
    </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.model.Estudiante">
+     <void property="correo">
+      <string>jorgew.montoyat@uqvirtual.edu.co</string>
+     </void>
+     <void property="id">
+      <string>1097032890</string>
+     </void>
+     <void property="nombre">
+      <string>Juan Andrés montoya</string>
+     </void>
+     <void property="telefono">
+      <string>3218941022</string>
+     </void>
+    </object>
+   </void>
   </void>
   <void property="listaProfesores">
    <void method="add">

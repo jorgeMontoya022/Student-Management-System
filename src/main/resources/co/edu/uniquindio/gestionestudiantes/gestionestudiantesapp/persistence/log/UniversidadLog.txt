@@ -92,3 +92,7 @@ feb 05, 2025 1:41:32 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudia
 INFO: login,Login,2025-02-05
 feb 05, 2025 1:42:57 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
 INFO: login,Login,2025-02-05
+feb 07, 2025 2:56:55 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: login,Login,2025-02-07
+feb 07, 2025 2:59:04 P. M. co.edu.uniquindio.gestionestudiantes.gestionestudiantesapp.utils.FileUtil saveLogRecord
+INFO: agregarEstudiante,Estudiante agregado: 1098766544,2025-02-07
